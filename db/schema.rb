@@ -34,8 +34,13 @@ ActiveRecord::Schema.define(:version => 20090822043430) do
     t.string  "salt",       :null => false
   end
 
-# Could not dump table "people" because of following StandardError
-#   Unknown type 'user_id' for column 'user'
+  create_table "people", :force => true do |t|
+    t.string   "name"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"

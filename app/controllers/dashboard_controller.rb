@@ -6,7 +6,8 @@ class DashboardController < ApplicationController
     #TODO: remove this
     #a simple stub:
     if @people.empty?
-      @people = %w{ Harry John Mark Stacey Jacob Matt Richard }.collect{|name| Person.create(:name => name)}
+      %w{ Harry John Mark Stacey Jacob Matt Richard }.each{|name| @user.people.create(:name => name)}
+      @people = @user.people
     end
   end
 
