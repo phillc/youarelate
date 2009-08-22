@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822090352) do
+ActiveRecord::Schema.define(:version => 20090822090741) do
+
+  create_table "data_points", :force => true do |t|
+    t.datetime "expected_time"
+    t.datetime "actual_time"
+    t.integer  "time_difference"
+    t.integer  "person_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
