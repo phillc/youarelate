@@ -21,22 +21,25 @@
       </h1>
     </div>
     <div id="dvnavicontainer">
-      <%= image_tag "navi_left.jpg" %>
       <div id="tabs">
         <ul>
-          <li><%= link_to "Register", new_user_path %></li>
-          <li><%= link_to "Login", login_path %></li>
-          <li><%= link_to "Logout", logout_path %></li>
+          <% if current_user %>
+            <li><%= link_to "Logout", logout_path %></li>
+          <% else %>
+            <li><%= link_to "Register", new_user_path %></li>
+            <li><%= link_to "Login", login_path %></li>
+          <% end %>
         </ul>
       </div>
-      <%= image_tag "navi_right.jpg" %>
     </div>
   </div>
 
   <div id="dvbodycontainer">
     <div id="dvbannerbgcontainer">
-      <%- flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% if flash %>
+        <%- flash.each do |name, msg| -%>
+          <%= content_tag :h1, msg, :id => "flash_#{name}" %>
+        <%- end -%>
       <%- end -%>
     </div>
     <div id="dvmainpanel"><%= yield %></div>
@@ -48,9 +51,12 @@
       </span>
       <span>Copyright &#169; 2009 Sorry, I ate your bacon</span>
       <%= link_to "Home", root_path %>
-      <%= link_to "Register", new_user_path %>
-      <%= link_to "Login", login_path %>
-      <%= link_to "Logout", logout_path %>
+      <% if current_user %>
+        <%= link_to "Logout", logout_path %>
+      <% else %>
+        <%= link_to "Register", new_user_path %>
+        <%= link_to "Login", login_path %>
+      <% end %>
     </p>
   </div>
 </div>
