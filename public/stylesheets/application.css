@@ -119,6 +119,11 @@ body {
   margin: 0;
   padding: 0 0 0 35px;
   }
+#dvbodycontainer #dvmainpanel {
+  float: left;
+  margin: 0;
+  padding: 25px 25px 25px 25px;
+}
 #dvbodycontainer #dvleftpanel {
   float: left;
   width: 274px;
