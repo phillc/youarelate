@@ -10,7 +10,15 @@ class UserSessionsController < ApplicationController
         flash[:notice] = "Successfully logged in."
         redirect_to dashboard_path(current_user)
       else
-        render :action => 'new'
+        @user = User.new(params[:user_session])
+        @user.save do |result|
+          if result
+            flash[:notice] = "Registration Successful."
+            redirect_to dashboard_path(@user)
+          else
+            render :action => "new"
+          end
+        end
       end
     end
   end
