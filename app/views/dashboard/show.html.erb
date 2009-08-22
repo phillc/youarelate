@@ -19,6 +19,11 @@
   }
   function respond_to_hover(event) {
     var element = Event.element(event);
+    //those links inside are being considered the element
+    //for the hover, so go up to what we intended to
+    if(!element.match('li.person')) {
+      element = element.up('li');
+    }
     //remove the highlight from all people, then add it to the current person
     $$('.active_person').invoke('removeClassName', 'active_person');
     element.addClassName('active_person');
