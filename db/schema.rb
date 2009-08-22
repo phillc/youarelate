@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822043430) do
+ActiveRecord::Schema.define(:version => 20090822085930) do
 
   create_table "datas", :force => true do |t|
     t.datetime "expected_time"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20090822043430) do
     t.datetime "time_difference"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "person_id"
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|
