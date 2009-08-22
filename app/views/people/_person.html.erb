@@ -1,8 +1,11 @@
 <li id="person_<%= person.id %>" class="person">
   <div class="utils">
-    <%= link_to "edit", edit_person_path(@user, person) %>
-    <%= link_to_function "delete", "$(this).up('li.person').down('.confirm_delete').toggle(); return false;" %>
-    <%= link_to_function "add", "move_person($(this).up('li.person'), $('calculations')); return false;" %>
+    <%= link_to image_tag("icons/report-paper.png", :alt => "Edit person"), edit_person_path(@user, person) %>
+    <%= link_to_function image_tag("icons/cross.png", :alt => "Delete this person"), "$(this).up('li.person').down('.confirm_delete').toggle(); return false;" %>
+    <%= link_to_function image_tag("icons/plus.png", :alt => "Add person to calculations"), "move_person($(this).up('li.person'), $('calculations')); return false;" %>
+  </div>
+  <div class="calc-utils">
+    <%= link_to_function image_tag("icons/minus.png", :alt => "Remove person from calculations"), "move_person($(this).up('li.person'), $('people')); return false;" %>
   </div>
   <%= person.name %>
   <%= draggable_element("person_" + person.id.to_s, :revert => true) %>
@@ -18,7 +21,7 @@
     <p>
       Are you sure?
       <%= link_to_function "no", "$(this).up('li.person').down('.confirm_delete').toggle(); return false;" %>
-      <%= link_to_remote "delete", :url => formatted_person_path(@user, person, :js), :method => :delete %>
+      <%= link_to_remote "delete", :url => person_path(@user, person, :js), :method => :delete, :success => "$('person_" + person.id.to_s + "').remove()" %>
     </p>
   </div>
 </li>

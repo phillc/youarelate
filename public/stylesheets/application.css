@@ -22,6 +22,12 @@ img { border: none; }
 a { border-bottom: 1px solid #2C1C0F; color: #2C1C0F; text-decoration: none; }
 a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
 
+#dvlogincontainer { background-color: #F8F4D5; border-bottom: 5px solid #F8F4D5; width: 100%; }
+#dvlogincontainer form { margin: 0 auto; width: 900px; text-align: right; }
+#dvlogincontainer label { color: #938A82; }
+#dvlogincontainer a { border-bottom: 1px solid #938A82; color: #938A82; }
+#dvlogincontainer a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
+
 #dvmaincontainer { margin: 0 auto; width: 900px; }
 #dvmaincontainer #dvtopcontainer { width: 100%; }
 
@@ -80,9 +86,13 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
   }
 #dvnavicontainer #tabs a {
   border: 0 none #000000;
-  color: #2C1C0F;
+  color: #938A82;
   padding: 3px 9px 0 9px; 
   }
+#dvnavicontainer #tabs a:hover {
+  border-color: #2C1C0F;
+  color: #2C1C0F;
+}
 
 /**
  * Main Body

@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_filter :get_user
+  before_filter :require_user, :get_user
 
   def index
     if params[:search] && params[:people]
@@ -12,19 +12,19 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @person = Person.find(params[:id])
+    @person = @user.people.find(params[:id])
   end
 
   def new
-    @person = Person.new
+    @person = @user.people.new
   end
 
   def edit
-    @person = Person.find(params[:id])
+    @person = @user.people.find(params[:id])
   end
 
   def create
-    @person = Person.new(params[:person])
+    @person = @user.people.new(params[:person])
     if @person.save
       flash[:notice] = 'Person was successfully created.'
       redirect_to(@person)
@@ -36,8 +36,8 @@ class PeopleController < ApplicationController
   def update
     @person = Person.find(params[:id])
     if @person.update_attributes(params[:person])
-      flash[:notice] = 'Person was successfully updated.'
-      redirect_to(@person)
+      flash[:notice] = "#{@person.name} was successfully updated."
+      redirect_to(dashboard_path(current_user))
     else
       render :action => "edit"
     end
@@ -46,11 +46,18 @@ class PeopleController < ApplicationController
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
-    redirect_to(people_url)
+    respond_to do |format|
+      format.html { redirect_to(people_url) }
+      format.js { render :nothing => true }
+    end
   end
 
   private
     def get_user
       @user = User.find(params[:dashboard_id])
+
+      if @user != current_user
+        redirect_to dashboard_path(current_user)
+      end
     end
 end

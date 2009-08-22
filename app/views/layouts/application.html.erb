@@ -9,10 +9,19 @@
 
 </head>
 <body>
+<% if !current_user %>
+  <div id="dvlogincontainer">
+    <form>
+      <label>
+        Your <a href="http://openid.net/" title="Obtain an OpenID here!">OpenID</a> URL
+      </label>
+      <input type="text"\>
+      <input type="button" value="Login/Register"\>
+    </form>
+  </div>
+<% end %>
 <div id="dvmaincontainer">
   <div id="dvtopcontainer">
-    <div id="dvlogincontainer">
-    </div>
     <div id="dvlogocontainer">
       <h1>
         <span class="lvl1"><%= link_to "We Know", root_path %></span>

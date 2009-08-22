@@ -9,7 +9,11 @@ class UserSessionsController < ApplicationController
     @user_session.save do |result|
       if result
         flash[:notice] = "Successfully logged in."
-        redirect_to dashboard_path(current_user)
+        if session[:return_to].nil?
+          redirect_to dashboard_path(current_user)
+        else
+          redirect_to session[:return_to]
+        end
       else
         @user = User.new(:openid_identifier => params["openid.claimed_id"])
         @user.save do |result|
@@ -29,6 +33,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.find
     @user_session.destroy
     flash[:notice] = "Successfully logged out."
-    redirect_to login_url
+    session[:return_to] = nil
+    redirect_to root_path
   end
 end

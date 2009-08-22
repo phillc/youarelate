@@ -28,6 +28,12 @@
     $$('.active_person').invoke('removeClassName', 'active_person');
     element.addClassName('active_person');
   }
+
+  Event.observe(window, 'load',
+    function() { $('people').down('.person').addClassName('active_person') }
+  );
+
+
 <% end %>
 <%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 

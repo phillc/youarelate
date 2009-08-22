@@ -10,13 +10,21 @@
 #people_container .active_person .person_stat {
   display: block;
 }
-#people_container .utils {
+.utils, .calc-utils {
   float: right;
 }
 
-#calculations .person .utils {
+.person .utils, .person .calc-utils {
   display: none;
 }
+
+#people_container .active_person .utils {
+  display: block;
+}
+#calculations_wrapper .calc-utils {
+  display: block;
+}
+
 #people_container {
   width: 275px;
   margin-left: 200px;
