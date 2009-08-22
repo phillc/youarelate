@@ -14,6 +14,9 @@
   
 body {
   background-color: #3F2F22;
+  background-image: url(../images/calendar_bg.png);
+  background-position: top left;
+  background-repeat: no-repeat;
   border-top: 5px solid #F8F4D5;
   font-family: Helvetica, Arial, Verdana;
   }
@@ -140,7 +143,7 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
   }
 #dvbodycontainer #dvbannerbgcontainer h1 { color: #513D2C; margin: 0; }
 #dvbodycontainer #dvmainpanel {
-  padding: 0 25px 0 25px;
+  padding: 0 25px 12px 25px;
   overflow: auto;
 }
 
@@ -172,3 +175,26 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
   }
 #dvfootercontainer p span { padding: 0 15px 0 0; }
 #dvfootercontainer span.designers { float: right; }
+
+.thirds_column {
+  float: left;
+  padding: 12px 0;
+  width: 283px;
+  text-align: center;
+  }
+#dvbodycontainer .thirds_column h2 {
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.thirds_column img {
+  border: 1px dashed #D5D4CD;
+  padding: 6px;
+  margin: 10px;
+ }
+.thirds_column p {
+  font-size: 12px;
+  padding: 12px 10px 0 12px;
+  text-align: left;
+  }
+

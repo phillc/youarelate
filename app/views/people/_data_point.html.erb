@@ -1,0 +1,16 @@
+<div class="fields">
+  <p>
+    <%= f.label :name, "Data Point" %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :expected_time %>
+    <%= f.datetime_select :expected_time %>
+  </p>
+  <p>
+    <%= f.label :actual_time %>
+    <%= f.datetime_select :actual_time %>
+  </p>
+
+  <%= remove_child_link "remove", f %>
+</div>

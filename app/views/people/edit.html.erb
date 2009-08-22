@@ -1,21 +1,5 @@
-<h1>Editing <%= "#{@person.name}" %> </h1>
+<% title "Editing #{@person.name}" %>
 
-<% form_for([@user, @person], :url => person_path(@user, @person)) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </p>
-
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-
-<% end %>
+<%= render :partial => 'form' %>
 
 <%= link_to 'Back', dashboard_path(current_user) %>
