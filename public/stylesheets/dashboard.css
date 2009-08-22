@@ -14,9 +14,14 @@
   float: right;
 }
 
-#calculations .person .utils {
+#people_container .person .utils, #calculations .person .utils {
   display: none;
 }
+
+#people_container .active_person .utils {
+  display: block;
+}
+
 #people_container {
   width: 275px;
   margin-left: 200px;
