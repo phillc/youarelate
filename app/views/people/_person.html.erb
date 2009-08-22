@@ -1,8 +1,8 @@
 <li id="person_<%= person.id %>" class="person">
   <div class="utils">
-    <%= link_to "edit" %>
-    <%= link_to "delete" %>
-    <%= link_to_function "add", "move_person($(this).up('li.person'), $('calculations'))" %>
+    <%= link_to "edit", edit_person_path(@user, person) %>
+    <%= link_to_function "delete", "$(this).up('li.person').down('.confirm_delete').toggle(); return false;" %>
+    <%= link_to_function "add", "move_person($(this).up('li.person'), $('calculations')); return false;" %>
   </div>
   <%= person.name %>
   <%= draggable_element("person_" + person.id.to_s, :revert => true) %>
@@ -14,4 +14,11 @@
     <p><%= person.notes %></p>
   </div>
   <%= hidden_field :people, "", {:id => "", :value => person.id} %>
+  <div class="confirm_delete" style="display:none;">
+    <p>
+      Are you sure?
+      <%= link_to_function "no", "$(this).up('li.person').down('.confirm_delete').toggle(); return false;" %>
+      <%= link_to_remote "delete", :url => person_path(@user, person), :method => :delete %>
+    </p>
+  </div>
 </li>

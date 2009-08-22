@@ -10,9 +10,9 @@
   <tr>
     <td><%=h person.name %></td>
     <td><%=h person.notes %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', person_path(@user, person) %></td>
+    <td><%= link_to 'Edit', edit_person_path(@user, person) %></td>
+    <td><%= link_to 'Destroy', person_path(@user, person), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
