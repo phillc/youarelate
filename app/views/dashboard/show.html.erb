@@ -34,6 +34,7 @@
 <%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 
 <div id="people_container">
+  <%= observe_field :post_name, :url => admin_documents_path(:post, :js), :update => "posts", :with => 'search', :frequency => 1, :method => :get %>
   <ul>
     <%= render :partial => "people/person", :collection => @user.people %>
   </ul>
