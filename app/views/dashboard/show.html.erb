@@ -1,5 +1,11 @@
 <% title "Dashboard" %>
 
+<% javascript_tag do %>
+  Event.observe(window, 'load',
+    function() { $('people').down('.person').addClassName('active_person') }
+  );
+<% end %>
+
 <div id="calculations_wrapper">
   <% form_tag dashboard_stats_path(@user, :js), {:method => :get, :id => "calc_form"} do %>
   <ul id="calculations" class="target-normal">
@@ -10,31 +16,6 @@
   <p>Then you would have a <span id="invite_probability">0</span>% chance of getting them all there on time</p>
 </div>
 
-<% javascript_tag do %>
-  function move_person(draggable_element, droppable_element, event) {
-    draggable_element.parentNode.removeChild(draggable_element);
-    droppable_element.appendChild(draggable_element);
-
-    $('calc_form').request();
-  }
-  function respond_to_hover(event) {
-    var element = Event.element(event);
-    //those links inside are being considered the element
-    //for the hover, so go up to what we intended to
-    if(!element.match('li.person')) {
-      element = element.up('li.person');
-    }
-    //remove the highlight from all people, then add it to the current person
-    $$('.active_person').invoke('removeClassName', 'active_person');
-    element.addClassName('active_person');
-  }
-
-  Event.observe(window, 'load',
-    function() { $('people').down('.person').addClassName('active_person') }
-  );
-
-
-<% end %>
 <%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 
 <div id="people_container">
