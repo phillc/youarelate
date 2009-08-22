@@ -28,16 +28,12 @@ class User < ActiveRecord::Base
     c.validate_email_field = false
   end
 
-  has_many :people
-
-
-
-
+  has_many :people, :dependent => :destroy
 
   private
 
-  def map_openid_registration(registration)
-    self.email = registration["email"]
-    self.username = registration["nickname"]
-  end
+    def map_openid_registration(registration)
+      self.email = registration["email"]
+      self.username = registration["nickname"]
+    end
 end
