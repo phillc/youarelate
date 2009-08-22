@@ -23,7 +23,6 @@
     $$('.active_person').invoke('removeClassName', 'active_person');
     element.addClassName('active_person');
   }
-  //TODO: make the people_container a droppable as well
 <% end %>
 <%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 

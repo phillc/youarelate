@@ -1,9 +1,11 @@
 class PeopleController < ApplicationController
+  before_filter :get_user
+
   def index
     if params[:search]
-      @people = Person.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"], :limit => 20)
+      @people = @user.people.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"], :limit => 20)
     else
-      @people = Person.all
+      @people = @user.people.all
     end
   end
 
@@ -44,4 +46,9 @@ class PeopleController < ApplicationController
     @person.destroy
     redirect_to(people_url)
   end
+
+  private
+    def get_user
+      @user = User.find(params[:dashboard_id])
+    end
 end
