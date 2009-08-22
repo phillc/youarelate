@@ -22,7 +22,7 @@
     //those links inside are being considered the element
     //for the hover, so go up to what we intended to
     if(!element.match('li.person')) {
-      element = element.up('li');
+      element = element.up('li.person');
     }
     //remove the highlight from all people, then add it to the current person
     $$('.active_person').invoke('removeClassName', 'active_person');
@@ -34,7 +34,7 @@
 <div id="people_container">
   <%= label :person, :name, "Search" %>
   <%= text_field :person, :name %>
-  <%= observe_field :person_name, :url => formatted_dashboard_people_path(@user, :js), :with => "'search=' + $('person_name').value + '&' + $('calc_form').serialize()", :frequency => 1, :method => :get %>
+  <%= observe_field :person_name, :url => formatted_people_path(@user, :js), :with => "'search=' + $('person_name').value + '&' + $('calc_form').serialize()", :frequency => 1, :method => :get %>
   <ul id="people">
     <%= render :partial => "people/person", :collection => @user.people %>
   </ul>
