@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822022605) do
+ActiveRecord::Schema.define(:version => 20090822043430) do
 
   create_table "datas", :force => true do |t|
     t.datetime "expected_time"
@@ -34,12 +34,8 @@ ActiveRecord::Schema.define(:version => 20090822022605) do
     t.string  "salt",       :null => false
   end
 
-  create_table "people", :force => true do |t|
-    t.string   "name"
-    t.text     "notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "people" because of following StandardError
+#   Unknown type 'user_id' for column 'user'
 
   create_table "users", :force => true do |t|
     t.string   "email"

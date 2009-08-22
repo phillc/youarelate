@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090822022605
+# Schema version: 20090822043430
 #
 # Table name: people
 #
@@ -8,6 +8,7 @@
 #  notes      :text
 #  created_at :datetime
 #  updated_at :datetime
+#  user       :
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
