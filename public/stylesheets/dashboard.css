@@ -35,10 +35,12 @@
   background-color: #BB9F89;
 }
 
-#calculations {
+#calculations_wrapper {
   float: right;
-  min-height: 300px;
   width: 275px;;
+}
+#calculations {
+  min-height: 300px;
 }
 .target-normal {
   border: 1px solid red;
