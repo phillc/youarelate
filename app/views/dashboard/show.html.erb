@@ -22,7 +22,7 @@
     //those links inside are being considered the element
     //for the hover, so go up to what we intended to
     if(!element.match('li.person')) {
-      element = element.up('li');
+      element = element.up('li.person');
     }
     //remove the highlight from all people, then add it to the current person
     $$('.active_person').invoke('removeClassName', 'active_person');

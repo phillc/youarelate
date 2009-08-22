@@ -42,9 +42,9 @@
 #calculations {
   min-height: 300px;
 }
-.target-normal {
+#calculations_wrapper .target-normal {
   border: 1px solid red;
 }
-.target-hovering {
+#calculations_wrapper .target-hovering {
   border: 1px solid green;
 }

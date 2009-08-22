@@ -2,7 +2,7 @@
   <div class="utils">
     <%= link_to "edit" %>
     <%= link_to "delete" %>
-    <%= link_to "add" %>
+    <%= link_to_function "add", "move_person($(this).up('li.person'), $('calculations'))" %>
   </div>
   <%= person.name %>
   <%= draggable_element("person_" + person.id.to_s, :revert => true) %>
