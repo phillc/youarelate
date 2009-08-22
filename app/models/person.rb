@@ -15,6 +15,8 @@ class Person < ActiveRecord::Base
   belongs_to :user
   has_many :data_points
   
+  accepts_nested_attributes_for :data_points
+  
   # stub for now
   # TODO: delete this
   def notes
