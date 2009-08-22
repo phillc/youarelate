@@ -1,16 +1,20 @@
 /**
  * CSS Document 
- * Dark       #3F2F22
- * Mid        #BB9F89
- * Light      #F8F4D5 
- * Very Light #FFFFFF
+ * Darker        #2C1C0F   Header Text
+ * Dark          #3F2F22   Background
+ * Mid           #513D2C   Body Text
+ * Mid Pale      #938A82   Footer Text
+ * MidLight      #BB9F89   Logo Header Subdued
+ * MidLight Pale #D5D4CD   Border
+ * Light         #F8F4D5   Nav/Topbar BG and Logo Header Focus
+ * Lightest      #FFFFFF   Body Background
  */
   
 * { margin: 0; padding: 0; } 
   
 body {
   background-color: #3F2F22;
-  border-top: 5px solid #FAF6DB;
+  border-top: 5px solid #F8F4D5;
   font-family: Helvetica, Arial, Verdana;
   }
 
@@ -46,21 +50,27 @@ img { border: none; }
 #dvtopcontainer #dvnavicontainer { float: right; }
 #dvnavicontainer img { float: left; } 
 #dvnavicontainer #tabs {
-  background: #FAF6DB;
+  background-image: url(../images/navi_left.jpg);
+  background-position: bottom left;
+  background-repeat: no-repeat;
   float: left;
   font-size: 15px;
   font-family: Helvetica, sans-serif;
   font-weight: bold;
   margin: 0;
-  padding-top: 6px; 
+  padding: 0 0 0 11px;
   /* height: 100%; Fix for MSIE peekaboo bug */
   }
 #dvnavicontainer #tabs ul {
+  background-image: url(../images/navi_right.jpg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
   float: left;
   list-style: none;
-  margin-top: 10px;
+  padding-right: 11px;
   }
 #dvnavicontainer #tabs li {
+  background: #F8F4D5;
   display: inline;
   float: left; 
   height: 25px;
@@ -75,8 +85,29 @@ img { border: none; }
 /**
  * Main Body
  */
-#dvmaincontainer #dvbodycontainer {
+#dvbodycontainer {
   clear: both;
+  color: #513D2C;
+  font-size: 14px;
+  line-height: 21px;
+  }
+#dvbodycontainer h1 {
+  color: #2C1C0F;
+  font-size: 24px;
+  line-height: 24px;
+  margin: 16px 0 6px 0;
+  }
+#dvbodycontainer h2 {
+  color: #2C1C0F;
+  font-size: 18px;
+  line-height: 18px;
+  margin: 13px 0 5px 0;
+  }
+#dvbodycontainer label {
+  font-size: 15px;
+  }
+
+#dvmaincontainer #dvbodycontainer {
   background-color: #FFFFFF;
   width: 900px;
   }
@@ -90,27 +121,13 @@ img { border: none; }
   width: 850px;
   }
 #dvbodycontainer #dvmainpanel {
-  padding: 25px 25px 25px 25px;
+  padding: 0 25px 0 25px;
   overflow: auto;
 }
 
-#dvbodycontainer {
-  color: #513D2C;
-  font-size: 14px;
-  line-height: 16px;
-}
-#dvbodycontainer h1 {
-  color: #2C1B11;
-  font-size: 24px;
-  padding: 10px 0px 0px 0;
-}
-#dvbodycontainer h2 {
-  color: #2C1B11;
-  font-size: 18px;
-  padding: 10px 0px 0px 0;
-}
-#dvbodycontainer label { font-size: 15px; }
-
+/**
+ * Footer
+ */
 #dvfootercontainer {
   width: 900px;
   background-image: url(../images/footer.jpg);

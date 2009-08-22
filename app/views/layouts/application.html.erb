@@ -21,7 +21,6 @@
       </h1>
     </div>
     <div id="dvnavicontainer">
-      <%= image_tag "navi_left.jpg" %>
       <div id="tabs">
         <ul>
           <% if current_user %>
@@ -33,14 +32,15 @@
           <% end %>
         </ul>
       </div>
-      <%= image_tag "navi_right.jpg" %>
     </div>
   </div>
 
   <div id="dvbodycontainer">
     <div id="dvbannerbgcontainer">
-      <%- flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% if flash %>
+        <%- flash.each do |name, msg| -%>
+          <%= content_tag :h1, msg, :id => "flash_#{name}" %>
+        <%- end -%>
       <%- end -%>
     </div>
     <div id="dvmainpanel"><%= yield %></div>
