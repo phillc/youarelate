@@ -41,15 +41,13 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users
   map.resources :user_sessions
-  map.resources :dashboard, :only => :show
+  map.resources :dashboard, :only => :show do |dashboard|
+    dashboard.resources :stats, :only => :index
+  end
 
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
   map.root :controller => :welcome
-
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
-
 
 end
