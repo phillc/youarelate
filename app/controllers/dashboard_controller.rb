@@ -1,7 +1,14 @@
 class DashboardController < ApplicationController
+
   before_filter :require_user
+  
   def show
-    @user = current_user
+    @user = User.find(params[:id])
+
+    if @user != current_user
+      redirect_to dashboard_path(current_user)
+    end
+
     #TODO: remove this
     #a simple stub:
     if @user.people.empty?

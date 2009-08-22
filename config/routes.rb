@@ -50,6 +50,6 @@ ActionController::Routing::Routes.draw do |map|
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   map.register "register", :controller => "users", :action => "new"
 
-  map.root :controller => "dashboard", :action => "show"
+  map.root :controller => "welcome"
 
 end
