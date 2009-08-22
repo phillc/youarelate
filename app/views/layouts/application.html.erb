@@ -10,8 +10,11 @@
 </head>
 <body>
 <% if !current_user %>
-  <div id="dvlogincontainer">
-    <%= render :partial => "user_sessions/simple_forms" %>
+  <div id="dvlogincontainer" class="login_register">
+    <%= render :partial => "user_sessions/simple_forms", :locals => {:text => "Login"} %>
+  </div>
+  <div id="dvregsitercontainer" class="login_register">
+    <%= render :partial => "user_sessions/simple_forms", :locals => {:text => "Register"} %>
   </div>
 <% end %>
 <div id="dvmaincontainer">
