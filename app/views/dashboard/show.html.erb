@@ -15,10 +15,7 @@
     draggable_element.parentNode.removeChild(draggable_element);
     droppable_element.appendChild(draggable_element);
 
-    $('calc_form').request({
-      onComplete: function(){
-      }
-    });
+    $('calc_form').request();
   }
   function respond_to_hover(event) {
     var element = Event.element(event);
@@ -38,3 +35,4 @@
     <%= render :partial => "people/person", :collection => @user.people %>
   </ul>
 </div>
+<%= drop_receiving_element("people", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
