@@ -10,62 +10,49 @@
 </head>
 <body>
 <div id="dvmaincontainer">
-  <!--main div container starts here-->
   <div id="dvtopcontainer">
-    <!-- top container starts here-->
     <div id="dvlogincontainer">
     </div>
     <div id="dvlogocontainer">
-      <!-- logo container starts here-->
       <h1>
         <span class="lvl1"><%= link_to "We Know", root_path %></span>
         <span class="lvl2"><%= link_to "You Are", root_path %></span>
         <span class="lvl3"><%= link_to "Late", root_path %></span>
       </h1>
-      <!-- logo container ends here-->
     </div>
     <div id="dvnavicontainer">
-      <!-- navogation div starts here-->
       <%= image_tag "navi_left.jpg" %>
       <div id="tabs">
         <ul>
-          <li><%= link_to "Register", login_path %></li>
+          <li><%= link_to "Register", new_user_path %></li>
           <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Logout", logout_path %></li>
         </ul>
       </div>
       <%= image_tag "navi_right.jpg" %>
-      <!-- navogation div ends here-->
     </div>
-    <!-- top container ends here-->
   </div>
 
   <div id="dvbodycontainer">
-    <!-- body div starts here-->
     <div id="dvbannerbgcontainer">
-      <!-- banner bg div starts here-->
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <%- end -%>
-      <!-- banner bg div ends here-->
     </div>
     <div id="dvmainpanel"><%= yield %></div>
-    <!-- body div ends here-->
   </div>
   <div id="dvfootercontainer">
-    <!-- footer div starts here-->
-    <div id="foottop">
-      <p>
-        <span>Copyright &#169; 2009 Sorry, I ate your bacon</span>
-        <%= link_to "Home", root_path %>
-        <%= link_to "Login", login_path %>
-        <span class="designers">
-          <a href="http://www.studio7designs.com">Design based off Eco Web Design by Studio7designs</a>
-        </span>
-      </p>
-    </div>
-    <!-- footer div ends here-->
+    <p>
+      <span class="designers">
+        <a href="http://www.studio7designs.com">Design based off Eco Web Design by Studio7designs</a>
+      </span>
+      <span>Copyright &#169; 2009 Sorry, I ate your bacon</span>
+      <%= link_to "Home", root_path %>
+      <%= link_to "Register", new_user_path %>
+      <%= link_to "Login", login_path %>
+      <%= link_to "Logout", logout_path %>
+    </p>
   </div>
-  <!--main div container ends here-->
 </div>
 </body>
 </html>
