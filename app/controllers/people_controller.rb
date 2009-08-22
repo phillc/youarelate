@@ -46,7 +46,10 @@ class PeopleController < ApplicationController
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
-    redirect_to(people_url)
+    respond_to do |format|
+      format.html { redirect_to(people_url) }
+      format.js { render :nothing => true }
+    end
   end
 
   private

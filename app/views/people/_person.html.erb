@@ -18,7 +18,7 @@
     <p>
       Are you sure?
       <%= link_to_function "no", "$(this).up('li.person').down('.confirm_delete').toggle(); return false;" %>
-      <%= link_to_remote "delete", :url => formatted_person_path(@user, person, :js), :method => :delete %>
+      <%= link_to_remote "delete", :url => person_path(@user, person, :js), :method => :delete, :success => "$('person_" + person.id.to_s + "').remove()" %>
     </p>
   </div>
 </li>
