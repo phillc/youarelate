@@ -91,6 +91,7 @@ img { border: none; }
   }
 #dvbodycontainer #dvmainpanel {
   padding: 25px 25px 25px 25px;
+  overflow: auto;
 }
 
 #dvbodycontainer {
