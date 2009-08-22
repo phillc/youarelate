@@ -36,7 +36,7 @@ class PeopleController < ApplicationController
   def update
     @person = Person.find(params[:id])
     if @person.update_attributes(params[:person])
-      flash[:notice] = 'Person was successfully updated.'
+      flash[:notice] = "#{@person.name} was successfully updated."
       redirect_to(dashboard_path(current_user))
     else
       render :action => "edit"
@@ -55,5 +55,9 @@ class PeopleController < ApplicationController
   private
     def get_user
       @user = User.find(params[:dashboard_id])
+
+      if @user != current_user
+        redirect_to dashboard_path(current_user)
+      end
     end
 end

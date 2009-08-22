@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   private
   def require_user
     if !current_user
+      session[:return_to] = request.request_uri
       flash[:notice] = "Sorry, you must be logged in to continue."
       redirect_to(login_path)
     end
