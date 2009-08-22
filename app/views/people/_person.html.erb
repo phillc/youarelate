@@ -4,6 +4,9 @@
     <%= link_to_function image_tag("icons/cross.png", :alt => "Delete this person"), "$(this).up('li.person').down('.confirm_delete').toggle(); return false;" %>
     <%= link_to_function image_tag("icons/plus.png", :alt => "Add person to calculations"), "move_person($(this).up('li.person'), $('calculations')); return false;" %>
   </div>
+  <div class="calc-utils">
+    <%= link_to_function image_tag("icons/minus.png", :alt => "Remove person from calculations"), "move_person($(this).up('li.person'), $('people')); return false;" %>
+  </div>
   <%= person.name %>
   <%= draggable_element("person_" + person.id.to_s, :revert => true) %>
   <% javascript_tag do %>
