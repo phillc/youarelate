@@ -29,12 +29,12 @@
 <% end %>
 
 <% form_for(@user) do |f| %>
-  <h2>Login with open id</h2>
+  <h2>Use OpenID</h2>
   <p>
     <%= f.label :openid_identifier, "OpenID URL" %><br />
     <%= f.text_field :openid_identifier %>
   </p>
-  <p><%= f.submit "Login" %></p>
+  <p><%= f.submit "Create with OpenID" %></p>
 <% end %>
 
 

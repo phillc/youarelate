@@ -13,7 +13,7 @@
 
 class Person < ActiveRecord::Base
   belongs_to :user
-  has_many :datas
+  has_many :data_points
   
   # stub for now
   # TODO: delete this
