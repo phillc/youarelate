@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     #TODO: remove this
     #a simple stub:
     if @user.people.empty?
