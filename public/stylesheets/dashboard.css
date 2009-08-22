@@ -1,12 +1,17 @@
+#dvmainpanel
+{
+ width: 100%;  
+}
 #person_stat_container {
-  width: 175px;
-  border: 1px solid #000;
+  width: 200px;
+  background-color: #FAF6DB;
+  min-height: 200px;
+  float: left;
 }
 
 #people_container {
-  width: 175px;
   margin-left: 200px;
-  float: left;
+  margin-right: 300px;
   border: 1px solid red;
 }
 
@@ -18,9 +23,9 @@
 }
 
 #calculations {
-  margin-left: 400px;
-  height: 200px;
-  width: 175px;
+  float: right;
+  min-height: 300px;
+  width: 275px;;
 }
 .normal {
   border: 1px solid red;

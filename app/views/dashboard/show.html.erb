@@ -2,11 +2,7 @@
 
 <div id="person_stat_container">
 </div>
-<div id="people_container">
-  <ul>
-    <%= render :partial => "people/person", :collection => @people %>
-  </ul>
-</div>
+
 <div id="calculations" class="normal">
 
 </div>
@@ -17,3 +13,9 @@
   }
 <% end %>
 <%= drop_receiving_element("calculations", {:onDrop => "move_person"}) %>
+
+<div id="people_container">
+  <ul>
+    <%= render :partial => "people/person", :collection => @people %>
+  </ul>
+</div>
