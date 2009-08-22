@@ -12,19 +12,19 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @person = Person.find(params[:id])
+    @person = @user.people.find(params[:id])
   end
 
   def new
-    @person = Person.new
+    @person = @user.people.new
   end
 
   def edit
-    @person = Person.find(params[:id])
+    @person = @user.people.find(params[:id])
   end
 
   def create
-    @person = Person.new(params[:person])
+    @person = @user.people.new(params[:person])
     if @person.save
       flash[:notice] = 'Person was successfully created.'
       redirect_to(@person)
