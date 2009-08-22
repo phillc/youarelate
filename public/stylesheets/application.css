@@ -19,6 +19,8 @@ body {
   }
 
 img { border: none; } 
+a { border-bottom: 1px solid #2C1C0F; color: #2C1C0F; text-decoration: none; }
+a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
 
 #dvmaincontainer { margin: 0 auto; width: 900px; }
 #dvmaincontainer #dvtopcontainer { width: 100%; }
@@ -41,7 +43,7 @@ img { border: none; }
 #dvlogocontainer h1 span.lvl1 { font-size: 16px; }
 #dvlogocontainer h1 span.lvl2 { font-size: 18px; line-height: 10px; }
 #dvlogocontainer h1 span.lvl3 { font-size: 33px; line-height: 33px; }
-#dvlogocontainer h1 span      a { color: #BB9F89; text-decoration: none; }
+#dvlogocontainer h1 span a { border: 0 none #000000; color: #BB9F89; }
 #dvlogocontainer h1 span.lvl3 a { color: #F8F4D5; }
 
 /**
@@ -77,9 +79,9 @@ img { border: none; }
   voice-family: "\"}\"";
   }
 #dvnavicontainer #tabs a {
+  border: 0 none #000000;
   color: #2C1C0F;
   padding: 3px 9px 0 9px; 
-  text-decoration: none;
   }
 
 /**
@@ -105,7 +107,16 @@ img { border: none; }
   }
 #dvbodycontainer label {
   font-size: 15px;
+  padding-right: 15px;
   }
+#dvbodycontainer .block {
+  padding: 14px;
+  }
+
+#dvbodycontainer span.buttons {
+  display: block;
+  padding: 14px 0; 
+  } 
 
 #dvmaincontainer #dvbodycontainer { background-color: #FFFFFF; width: 900px; }
 #dvbodycontainer #dvbannerbgcontainer {
@@ -117,6 +128,7 @@ img { border: none; }
   padding: 15px 25px;
   width: 850px;
   }
+#dvbodycontainer #dvbannerbgcontainer h1 { color: #513D2C; margin: 0; }
 #dvbodycontainer #dvmainpanel {
   padding: 0 25px 0 25px;
   overflow: auto;
@@ -139,14 +151,14 @@ img { border: none; }
   padding: 25px 20px 0 20px;
   }
 #dvfootercontainer p a {
+  border-bottom: 0px solid #938A82;
   color: #938A82;
   padding-left: 5px;
   padding-right: 5px;
-  text-decoration: none;
   }
 #dvfootercontainer p a:hover {
+  border-bottom: 0px solid #938A82;
   color: #938A82;
-  text-decoration: underline;
   }
 #dvfootercontainer p span { padding: 0 15px 0 0; }
 #dvfootercontainer span.designers { float: right; }
