@@ -3,7 +3,7 @@
 <div id="person_stat_container">
 </div>
 
-<% form_tag "", {:id => "calc_form"} do %>
+<% form_tag formatted_dashboard_stats_path(@user, :js), {:method => :get, :id => "calc_form"} do %>
 <div id="calculations" class="target-normal">
 
 </div>
@@ -32,6 +32,6 @@
 
 <div id="people_container">
   <ul>
-    <%= render :partial => "people/person", :collection => @people %>
+    <%= render :partial => "people/person", :collection => @user.people %>
   </ul>
 </div>
