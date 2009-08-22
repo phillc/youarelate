@@ -1,4 +1,4 @@
-<h1>Editing person</h1>
+<h1>Editing <%= "#{@person.name}" %> </h1>
 
 <% form_for([@user, @person], :url => person_path(@user, @person)) do |f| %>
   <%= f.error_messages %>
@@ -17,5 +17,4 @@
   
 <% end %>
 
-<%#= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+<%= link_to 'Back', dashboard_path(current_user) %>
