@@ -1,3 +1,14 @@
+#person_stat_container {
+  width: 175px;
+  border: 1px solid #000;
+}
+
+#people_container {
+  width: 175px;
+  margin-left: 200px;
+  float: left;
+  border: 1px solid red;
+}
 #people_container ul {
   list-style-type: none;
 }
@@ -6,3 +17,13 @@
   border: 1px solid #000;
   cursor: move;
 }
+
+#calculations {
+  margin-left: 400px;
+  height: 200px;
+  width: 175px;
+}
+.normal {
+  border: 1px solid red;
+}
+.hovering { border: 1px solid green;

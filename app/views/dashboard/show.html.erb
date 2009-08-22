@@ -4,10 +4,16 @@
 </div>
 <div id="people_container">
   <ul>
-    <% i = 0 %>
     <%= render :partial => "people/person", :collection => @people %>
   </ul>
 </div>
-<div id="calculations">
+<div id="calculations" class="normal">
 
 </div>
+<% javascript_tag do %>
+  function move_person(draggable_element, droppable_element, event) {
+    draggable_element.parentNode.removeChild(draggable_element);
+    droppable_element.appendChild(draggable_element);
+  }
+<% end %>
+<%= drop_receiving_element("calculations", {:onDrop => "move_person"}) %>
