@@ -28,39 +28,36 @@ padding:0px 0px 0px 0px;
 #dvtopcontainer #dvlogocontainer
 {
 float:left;
-width:324px;
 font-size:0px;
 margin:0px;
 padding:0px 71px 0px 0px;
 }
 #dvlogocontainer h1
 {
-float:right;
-width:314px;
+clear:left;
+float:left;
 font-family:Arial, Helvetica, sans-serif;
 font-size:31px;
 text-align:right;
 font-weight:bold;
 color:#F8F4D5;
 margin:0px;
+padding:0px 0px 0px 0px;
+}
+#dvlogocontainer h1.lvl1
+{
 padding:32px 0px 0px 0px;
 }
 #dvlogocontainer h4
 {
-float:right;
-width:198px;
-font-family:Arial, Helvetica, sans-serif;
 font-size:14px;
-text-align:right;
 font-weight:bold;
 color:#BB9F89;
-margin:0px;
-padding:0px 0px 30px 0px;
 }
 #dvtopcontainer #dvnavicontainer
 {
 float:right;
-width:395px;
+/*width:395px;*/
 font-size:0px;
 margin:0px;
 padding:0px 0px 0px 0px;
