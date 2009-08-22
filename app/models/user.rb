@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090822022605
+# Schema version: 20090822195053
 #
 # Table name: users
 #
@@ -15,7 +15,22 @@
 #
 
 class User < ActiveRecord::Base
-  acts_as_authentic
+  acts_as_authentic do |c|
+    c.openid_required_fields = [:nickname, :email]
+    c.validate_login_field = false
+    c.validate_email_field = false
+  end
 
   has_many :people
+
+
+
+
+
+  private
+
+  def map_openid_registration(registration)
+    self.email = registration["email"]
+    self.username = registration["nickname"]
+  end
 end
