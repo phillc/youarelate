@@ -11,24 +11,24 @@
   <!--main div container starts here-->
   <div id="dvtopcontainer">
     <!-- top container starts here-->
+    <div id="dvlogincontainer">
+    </div>
     <div id="dvlogocontainer">
       <!-- logo container starts here-->
       <h1>
-        <span class="lvl1">We Know</span>
-        <span class="lvl2">You Are</span>
-        <span class="lvl3">Late</span>
+        <span class="lvl1"><%= link_to "We Know", root_path %></span>
+        <span class="lvl2"><%= link_to "You Are", root_path %></span>
+        <span class="lvl3"><%= link_to "Late", root_path %></span>
       </h1>
-      
       <!-- logo container ends here-->
     </div>
     <div id="dvnavicontainer">
       <!-- navogation div starts here-->
       <img src="images/navi_left.jpg" alt="" />
-      <div id="tabs1" >
+      <div id="tabs" >
         <ul>
-          <!-- CSS Tabs -->
-          <li><a href="#"><span>Register</span></a></li>
-          <li><a href="#"><span>Login</span></a></li>
+          <li><%= link_to "Register", login_path %></li>
+          <li><%= link_to "Login", login_path %></li>
         </ul>
       </div>
       <img src="images/navi_right.jpg" alt="" />
@@ -36,28 +36,26 @@
     </div>
     <!-- top container ends here-->
   </div>
+
   <div id="dvbodycontainer">
     <!-- body div starts here-->
     <div id="dvbannerbgcontainer">
       <!-- banner bg div starts here-->
-<%- flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<%- end -%>
-      <%= yield %>
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
       <!-- banner bg div ends here-->
     </div>
+    <div id="dvmainpanel"><%= yield %></div>
     <div id="dvleftpanel">
       <!-- left pannel div starts here-->
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       <!-- left pannel div ends here-->
     </div>
     <div id="dvrightpanel">
       <!-- right panel div starts here-->
-      <h1>Header 1</h1>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <h1></h1>
       <div class="line"><img src="images/h_line.jpg" alt="" width="535" height="1" title="" /></div>
-      <h1>Header 2</h1>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <h1></h1>
       <!-- right panel div ends here-->
     </div>
     <!-- body div ends here-->
@@ -66,11 +64,12 @@
     <!-- footer div starts here-->
     <div id="foottop">
       <p>
-        <span>Copyright © 2009 Sorry, I ate your bacon</span>
+        <span>Copyright &#169; 2009 Sorry, I ate your bacon</span>
         <%= link_to "Home", root_path %>
-        <a href="#" title="Register">Register</a>
-        <a href="#" title="Login">Login</a>
-        <a href="http://www.studio7designs.com">Design based off Eco Web Design by Studio7designs</a>
+        <%= link_to "Login", login_path %>
+        <span class="designers">
+          <a href="http://www.studio7designs.com">Design based off Eco Web Design by Studio7designs</a>
+        </span>
       </p>
     </div>
     <!-- footer div ends here-->
