@@ -1,5 +1,7 @@
 class PeopleController < ApplicationController
-  before_filter :require_user, :get_user
+  before_filter :resource_user
+  before_filter :require_user
+  before_filter :require_equal_user
 
   def index
     if params[:search] && params[:people]
@@ -34,7 +36,7 @@ class PeopleController < ApplicationController
   end
 
   def update
-    @person = Person.find(params[:id])
+    @person = @user.people.find(params[:id])
     if @person.update_attributes(params[:person])
       flash[:notice] = "#{@person.name} was successfully updated."
       redirect_to(dashboard_path(current_user))
@@ -44,7 +46,7 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    @person = Person.find(params[:id])
+    @person = @user.people.find(params[:id])
     @person.destroy
     respond_to do |format|
       format.html { redirect_to(people_url) }

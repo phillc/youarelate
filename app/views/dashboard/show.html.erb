@@ -1,7 +1,7 @@
 <% title "Dashboard" %>
 
 <div id="calculations_wrapper">
-  <% form_tag formatted_dashboard_stats_path(@user, :js), {:method => :get, :id => "calc_form"} do %>
+  <% form_tag dashboard_stats_path(@user, :js), {:method => :get, :id => "calc_form"} do %>
   <ul id="calculations" class="target-normal">
 
   </ul>
@@ -40,7 +40,7 @@
 <div id="people_container">
   <%= label :person, :name, "Search" %>
   <%= text_field :person, :name %>
-  <%= observe_field :person_name, :url => formatted_people_path(@user, :js), :with => "'search=' + $('person_name').value + '&' + $('calc_form').serialize()", :frequency => 1, :method => :get %>
+  <%= observe_field :person_name, :url => people_path(@user, :js), :with => "'search=' + $('person_name').value + '&' + $('calc_form').serialize()", :frequency => 1, :method => :get %>
   <ul id="people">
     <%= render :partial => "people/person", :collection => @user.people %>
   </ul>

@@ -1,6 +1,9 @@
 class StatsController < ApplicationController
+  before_filter :resource_user
+  before_filter :require_user
+  before_filter :require_equal_user
+
   def index
-    @user = User.find(params[:dashboard_id])
     @people = @user.people.find(params[:people])
 
     # TODO: stubbing
