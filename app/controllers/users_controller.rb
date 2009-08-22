@@ -7,15 +7,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    @user.save do |result|
-      if result
-        flash[:notice] = "Registration Successful."
-        redirect_to dashboard_path(@user)
-      else
-        render :action => "new"
-      end
-    end
+    #@user = User.new(params[:user])
+    #@user.save do |result|
+      #if result
+        #flash[:notice] = "Registration Successful."
+        #redirect_to dashboard_path(@user)
+      #else
+        #render :action => "new"
+      #end
+    #end
   end
 
   #TODO: Remove below
