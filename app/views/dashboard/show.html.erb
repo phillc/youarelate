@@ -3,20 +3,30 @@
 <div id="person_stat_container">
 </div>
 
+<% form_tag "", {:id => "calc_form"} do %>
 <div id="calculations" class="target-normal">
 
 </div>
+<% end %>
+
 <% javascript_tag do %>
   function move_person(draggable_element, droppable_element, event) {
     draggable_element.parentNode.removeChild(draggable_element);
     droppable_element.appendChild(draggable_element);
+
+    $('calc_form').request({
+      onComplete: function(){
+        alert('woot');
+      }
+    });
   }
   function respond_to_hover(event) {
     var element = Event.element(event);
     //remove the highlight from all people, then add it to the current person
-    $$('.active_person').invoke('removeClassName', 'active_person')
+    $$('.active_person').invoke('removeClassName', 'active_person');
     element.addClassName('active_person');
   }
+  //TODO: make the people_container a droppable as well
 <% end %>
 <%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 

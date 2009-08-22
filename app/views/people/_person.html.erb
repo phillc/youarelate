@@ -12,4 +12,5 @@
     <p><%= person.name %></p>
     <p><%= person.notes %></p>
   </div>
+  <%= hidden_field :person, "", {:value => person.id} %>
 </li>
