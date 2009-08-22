@@ -2,7 +2,9 @@ class PeopleController < ApplicationController
   before_filter :get_user
 
   def index
-    if params[:search]
+    if params[:search] && params[:people]
+      @people = @user.people.find(:all, :conditions => ['name LIKE ? AND id NOT IN (?)', "%#{params[:search]}%", params[:people]], :limit => 20)
+    elsif params[:search]
       @people = @user.people.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"], :limit => 20)
     else
       @people = @user.people.all
