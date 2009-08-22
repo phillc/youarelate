@@ -1,5 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>We Know You Are Late</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<%= stylesheet_tag "application", {:media => "screen"} %>
+
+</head>
+<body>
+<div id="dvmaincontainer">
+  <!--main div container starts here-->
+  <div id="dvtopcontainer">
+    <!-- top container starts here-->
+    <div id="dvlogocontainer">
+      <!-- logo container starts here-->
+      <h1>
+        <span class="lvl1">We Know</span>
+        <span class="lvl2">You Are</span>
+        <span class="lvl3">Late</span>
+      </h1>
+      
+      <!-- logo container ends here-->
+    </div>
+    <div id="dvnavicontainer">
+      <!-- navogation div starts here-->
+      <img src="images/navi_left.jpg" alt="" />
+      <div id="tabs1" >
+        <ul>
+          <!-- CSS Tabs -->
+          <li><a href="#"><span>Register</span></a></li>
+          <li><a href="#"><span>Login</span></a></li>
+        </ul>
+      </div>
+      <img src="images/navi_right.jpg" alt="" />
+      <!-- navogation div ends here-->
+    </div>
+    <!-- top container ends here-->
+  </div>
+  <div id="dvbodycontainer">
+    <!-- body div starts here-->
+    <div id="dvbannerbgcontainer">
+      <!-- banner bg div starts here-->
 <%- flash.each do |name, msg| -%>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <%- end -%>
-
-<%= yield %>
+      <%= yield %>
+      <!-- banner bg div ends here-->
+    </div>
+    <div id="dvleftpanel">
+      <!-- left pannel div starts here-->
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <!-- left pannel div ends here-->
+    </div>
+    <div id="dvrightpanel">
+      <!-- right panel div starts here-->
+      <h1>Header 1</h1>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <div class="line"><img src="images/h_line.jpg" alt="" width="535" height="1" title="" /></div>
+      <h1>Header 2</h1>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <!-- right panel div ends here-->
+    </div>
+    <!-- body div ends here-->
+  </div>
+  <div id="dvfootercontainer">
+    <!-- footer div starts here-->
+    <div id="foottop">
+      <p>
+        <span>Copyright © 2009 Sorry, I ate your bacon</span>
+        <%= link_to "Home", root_path %>
+        <a href="#" title="Register">Register</a>
+        <a href="#" title="Login">Login</a>
+        <a href="http://www.studio7designs.com">Design based off Eco Web Design by Studio7designs</a>
+      </p>
+    </div>
+    <!-- footer div ends here-->
+  </div>
+  <!--main div container ends here-->
+</div>
+</body>
+</html>

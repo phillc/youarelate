@@ -5,3 +5,5 @@ doc/app
 *.sqlite3
 database.yml
 nbproject
+*.db
+*.swp
