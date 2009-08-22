@@ -1,4 +1,7 @@
 <li id="person_<%= person.id %>" class="person">
   <%= person.name %>
   <%= draggable_element("person_" + person.id.to_s, :revert => true) %>
+  <% javascript_tag do %>
+    $('person_<%= person.id %>').observe('mouseover', respond_to_hover);
+  <% end %>
 </li>

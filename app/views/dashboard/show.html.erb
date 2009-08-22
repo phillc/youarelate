@@ -3,7 +3,7 @@
 <div id="person_stat_container">
 </div>
 
-<div id="calculations" class="normal">
+<div id="calculations" class="target-normal">
 
 </div>
 <% javascript_tag do %>
@@ -11,8 +11,14 @@
     draggable_element.parentNode.removeChild(draggable_element);
     droppable_element.appendChild(draggable_element);
   }
+  function respond_to_hover(event) {
+    var element = Event.element(event);
+    //remove the highlight from all people, then add it to the current person
+    $$('.active_person').invoke('removeClassName', 'active_person')
+    element.addClassName('active_person');
+  }
 <% end %>
-<%= drop_receiving_element("calculations", {:onDrop => "move_person"}) %>
+<%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 
 <div id="people_container">
   <ul>

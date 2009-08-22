@@ -1,25 +1,25 @@
-#dvmainpanel
-{
- width: 100%;  
-}
 #person_stat_container {
   width: 200px;
-  background-color: #FAF6DB;
-  min-height: 200px;
+  background-color: #BB9F89;
+  min-height: 600px;
   float: left;
 }
 
 #people_container {
+  width: 275px;
   margin-left: 200px;
   margin-right: 300px;
-  border: 1px solid red;
 }
 
 .person {
   list-style-type: none;
-  margin: 2px;
-  border: 1px solid #000;
   cursor: move;
+  background-color: #FAF6DB;
+  margin-bottom: 2px;
+  padding: 5px;
+}
+.active_person {
+  background-color: #BB9F89;
 }
 
 #calculations {
@@ -27,7 +27,9 @@
   min-height: 300px;
   width: 275px;;
 }
-.normal {
+.target-normal {
   border: 1px solid red;
 }
-.hovering { border: 1px solid green;
+.target-hovering {
+  border: 1px solid green;
+}
