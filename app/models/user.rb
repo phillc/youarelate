@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 
   acts_as_authentic do |c|
     c.openid_required_fields = [:nickname, :email]
+    c.validate_login_field = false
+    c.validate_email_field = false
   end
 
   private
