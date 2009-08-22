@@ -1,3 +1,4 @@
-<li class="person">
+<li id="person_<%= person.id %>" class="person">
   <%= person.name %>
+  <%= draggable_element_js "person_" + person.id.to_s %>
 </li>

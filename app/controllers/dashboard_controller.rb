@@ -1,9 +1,13 @@
 class DashboardController < ApplicationController
   def show
     @user = User.find(params[:id])
-    #@people = user.people
+    @people = @user.people
+    
+    #TODO: remove this
     #a simple stub:
-    @people = %w{ Harry John Mark Stacey Jacob Matt Richard }.collect{|name| Person.new(:name => name)}
+    if @people.empty?
+      @people = %w{ Harry John Mark Stacey Jacob Matt Richard }.collect{|name| Person.create(:name => name)}
+    end
   end
 
 end

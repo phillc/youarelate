@@ -1,0 +1,8 @@
+#people_container ul {
+  list-style-type: none;
+}
+#people_container .person {
+  margin: 2px;
+  border: 1px solid #000;
+  cursor: move;
+}
