@@ -4,3 +4,4 @@ doc/api
 doc/app
 *.sqlite3
 database.yml
+nbproject
