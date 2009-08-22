@@ -11,13 +11,7 @@
 <body>
 <% if !current_user %>
   <div id="dvlogincontainer">
-    <form>
-      <label>
-        Your <a href="http://openid.net/" title="Obtain an OpenID here!">OpenID</a> URL
-      </label>
-      <input type="text"\>
-      <input type="button" value="Login/Register"\>
-    </form>
+    <%= render :partial => "user_sessions/simple_forms" %>
   </div>
 <% end %>
 <div id="dvmaincontainer">
