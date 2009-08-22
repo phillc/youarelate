@@ -6,3 +6,4 @@ doc/app
 database.yml
 nbproject
 *.db
+*.swp
