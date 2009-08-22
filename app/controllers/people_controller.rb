@@ -21,6 +21,7 @@ class PeopleController < ApplicationController
 
   def edit
     @person = @user.people.find(params[:id])
+    @data_point = DataPoint.new;
   end
 
   def create

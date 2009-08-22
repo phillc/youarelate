@@ -22,19 +22,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-    @user = current_user
-    @user.attributes = params[:user]
-
-    @user.save do |result|
-      if result
-        flash[:notice] = "Profile Updated"
-        redirect_to root_url
-      else
-        render :action => "edit"
-      end
-    end
-    
-  end
+#  def update
+#    @user = current_user
+#    @user.attributes = params[:user]
+#
+#    @user.save do |result|
+#      if result
+#        flash[:notice] = "Profile Updated"
+#        redirect_to root_url
+#      else
+#        render :action => "edit"
+#      end
+#    end
+#
+#  end
 
 end
