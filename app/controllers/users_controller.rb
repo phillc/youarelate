@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :require_user
+  before_filter :require_user, :except => [:new, :create]
 
   # GET /users/new
   # GET /users/new.xml
