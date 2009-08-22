@@ -1,5 +1,6 @@
 <% title "Dashboard" %>
 
+<div id="calculations_wrapper">
   <% form_tag formatted_dashboard_stats_path(@user, :js), {:method => :get, :id => "calc_form"} do %>
   <ul id="calculations" class="target-normal">
 
@@ -30,8 +31,10 @@
 <%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 
 <div id="people_container">
-  <%= observe_field :post_name, :url => admin_documents_path(:post, :js), :update => "posts", :with => 'search', :frequency => 1, :method => :get %>
-  <ul>
+  <%= label :person, :name, "Search" %>
+  <%= text_field :person, :name %>
+  <%= observe_field :person_name, :url => formatted_dashboard_people_path(@user, :js), :with => 'search', :frequency => 1, :method => :get %>
+  <ul id="people">
     <%= render :partial => "people/person", :collection => @user.people %>
   </ul>
 </div>

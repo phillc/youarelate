@@ -1,6 +1,10 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.all
+    if params[:search]
+      @people = Person.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"], :limit => 20)
+    else
+      @people = Person.all
+    end
   end
 
   def show
