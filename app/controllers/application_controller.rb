@@ -10,14 +10,13 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  private
   def require_user
     if !current_user
       flash[:notice] = "Sorry, you must be logged in to continue."
       redirect_to(login_path)
     end
   end
-
-  private
 
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
