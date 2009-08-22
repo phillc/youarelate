@@ -24,7 +24,6 @@
       <div id="tabs">
         <ul>
           <% if current_user %>
-            <li><%= link_to "Settings", edit_user_path %></li>
             <li><%= link_to "Logout", logout_path %></li>
           <% else %>
             <li><%= link_to "Register", new_user_path %></li>
@@ -53,7 +52,6 @@
       <span>Copyright &#169; 2009 Sorry, I ate your bacon</span>
       <%= link_to "Home", root_path %>
       <% if current_user %>
-        <%= link_to "Settings", edit_user_path %>
         <%= link_to "Logout", logout_path %>
       <% else %>
         <%= link_to "Register", new_user_path %>

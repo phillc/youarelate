@@ -107,10 +107,7 @@ img { border: none; }
   font-size: 15px;
   }
 
-#dvmaincontainer #dvbodycontainer {
-  background-color: #FFFFFF;
-  width: 900px;
-  }
+#dvmaincontainer #dvbodycontainer { background-color: #FFFFFF; width: 900px; }
 #dvbodycontainer #dvbannerbgcontainer {
   background-image: url(../images/bg.jpg);
   background-position: top;
