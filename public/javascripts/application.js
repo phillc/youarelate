@@ -36,3 +36,24 @@ function respond_to_hover(event) {
   element.addClassName('active_person');
 }
 
+function show_login_register(login_register) {
+  var login = $('dvlogincontainer');
+  var register = $('dvregsitercontainer');
+
+  var queue = Effect.Queues.get('login_register');
+  queue.each(function(effect) { effect.cancel(); });
+
+  if(login_register == 'login'){
+    if(register.getStyle('display') != "none") {
+      Effect.SlideUp(register, {queue: {scope: 'login_register'}});
+    }
+    Effect.toggle(login, 'slide', {queue: {scope: 'login_register'}});
+  } else if(login_register == 'register'){
+    if(login.getStyle('display') != "none") {
+      Effect.SlideUp(login, {queue: {scope: 'login_register'}});
+    }
+    Effect.toggle(register, 'slide', {queue: {scope: 'login_register'}});
+  }
+  return false;
+}
+
