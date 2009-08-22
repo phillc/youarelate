@@ -1,4 +1,7 @@
 /* CSS Document */
+/*
+Main BG #3F2F22
+*/
   
 * {
   margin: 0;
@@ -7,11 +10,11 @@
   
 body {
   background-color: #3F2F22;
-  background-image: url(../images/body_bg.jpg);
-  background-repeat: repeat-x;
-  font-family: 'Helvetica', Arial, Verdana;
-  margin: 0;
+  border-top: 5px solid #FAF6DB;
+  font-family: Helvetica, Arial, Verdana;
   }
+img { border: none; } 
+
 #dvmaincontainer {
   margin: 0 auto;
   width: 900px;
@@ -20,7 +23,7 @@ body {
   float: left;
   margin: 0;
   padding: 0;
-  width: 900px;
+  width: 100%;
   }
 #dvtopcontainer #dvlogocontainer {
   float: left;
@@ -35,7 +38,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   margin: 0;
-  padding: 10px 0 0 0;
+  padding: 5px 0 0 0;
   text-align: center;
   text-transform: uppercase;
   }
@@ -62,7 +65,7 @@ body {
   
 #dvmaincontainer #dvbodycontainer {
   float: left;
-  background-image: url(../images/page_bg.jpg);
+  background-color: #FFFFFF;
   background-position: top center;
   background-repeat: repeat-y;
   margin: 0;
@@ -70,7 +73,7 @@ body {
   width: 900px;
   }
 #dvbodycontainer #dvbannerbgcontainer {
-  background-image: url(../images/bg.jpg);
+  background-image: url(../images/bg.png);
   background-position: top;
   background-repeat: repeat;
   border-bottom: 1px solid #D5D4CD;
@@ -451,9 +454,4 @@ body {
   color: #FFFFFF;
   }
   
-/*-----------------------------Menu ------------------------------*/
-  
-img {
-  border:  none;
-  } 
   
