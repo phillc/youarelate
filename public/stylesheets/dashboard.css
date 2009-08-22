@@ -1,8 +1,17 @@
-#person_stat_container {
+.person_stat {
   width: 200px;
   background-color: #BB9F89;
-  min-height: 600px;
-  float: left;
+  min-height: 300px;
+  position: absolute;
+  top: 0;
+  left: -200px;
+  display: none;
+}
+#people_container .active_person .person_stat {
+  display: block;
+}
+#people_container .utils {
+  float: right;
 }
 
 #people_container {
@@ -18,7 +27,8 @@
   margin-bottom: 2px;
   padding: 5px;
 }
-.active_person {
+
+#people_container .active_person {
   background-color: #BB9F89;
 }
 
