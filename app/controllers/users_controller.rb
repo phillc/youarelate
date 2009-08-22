@@ -12,21 +12,29 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
-      flash[:notice] = "Registration Successful."
-      redirect_to dashboard_path(@user)
-    else
-      render :action => "new"
+    @user.save do |result|
+      if result
+        flash[:notice] = "Registration Successful."
+        redirect_to dashboard_path(@user)
+      else
+        render :action => "new"
+      end
     end
   end
 
   def update
     @user = current_user
-    if @user.update_attributes(params[:user])
-      flash[:notice] = "Profile Updated"
-      redirect_to root_url
-    else
-      render :action => "edit"
+    @user.attributes = params[:user]
+
+    @user.save do |result|
+      if result
+        flash[:notice] = "Profile Updated"
+        redirect_to root_url
+      else
+        render :action => "edit"
+      end
     end
+    
   end
+
 end
