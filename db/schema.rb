@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822090741) do
+ActiveRecord::Schema.define(:version => 20090822210831) do
 
   create_table "data_points", :force => true do |t|
     t.datetime "expected_time"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(:version => 20090822090741) do
     t.integer  "user_id"
   end
 
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "crypted_password"
@@ -51,7 +61,14 @@ ActiveRecord::Schema.define(:version => 20090822090741) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "openid_identifier"
-    t.string   "username"
+    t.string   "login"
+    t.integer  "login_count",        :default => 0, :null => false
+    t.integer  "failed_login_count", :default => 0, :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
   end
 
   add_index "users", ["openid_identifier"], :name => "index_users_on_openid_identifier"
