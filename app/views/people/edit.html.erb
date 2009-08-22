@@ -1,6 +1,6 @@
 <h1>Editing person</h1>
 
-<% form_for([@user, @person], :url => person_path(@user, @person) do |f| %>
+<% form_for([@user, @person], :url => person_path(@user, @person)) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -14,7 +14,8 @@
   <p>
     <%= f.submit 'Update' %>
   </p>
+  
 <% end %>
 
-<%= link_to 'Show', @person %> |
+<%#= link_to 'Show', @person %> |
 <%= link_to 'Back', people_path %>

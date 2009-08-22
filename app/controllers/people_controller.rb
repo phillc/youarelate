@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_filter :get_user
+  before_filter :require_user, :get_user
 
   def index
     if params[:search] && params[:people]
