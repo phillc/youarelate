@@ -28,3 +28,7 @@ config.action_mailer.delivery_method = :test
 # config.active_record.schema_format = :sql
 
 config.gem "rspec"
+config.gem "thoughtbot-factory_girl",
+              :lib    => "factory_girl",
+              :source => "http://gems.github.com"
+
