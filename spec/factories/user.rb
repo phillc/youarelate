@@ -1,3 +1,7 @@
+Factory.sequence :name do |n|
+  "someuser#{n}"
+end
+
 Factory.define :user do |u|
-    u.add_attribute :balance, 0
+    u.name Factory.next(:name)
 end
