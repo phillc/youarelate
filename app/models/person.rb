@@ -13,7 +13,11 @@
 
 class Person < ActiveRecord::Base
   belongs_to :user
-  has_many :data_points
+  has_many :data_points, :dependent => :destroy
+
+  accepts_nested_attributes_for :data_points, :reject_if => lambda { |a| a.values.all?(&:blank?) }, :allow_destroy => true
+
+  validates_presence_of :name
   
   # stub for now
   # TODO: delete this
