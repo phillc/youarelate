@@ -5,13 +5,11 @@ class UserSessionsController < ApplicationController
 
   def create
     @user_session = UserSession.new(params[:user_session])
-    @user_session.save do |result|
-      if result
-        flash[:notice] = "Successfully logged in."
-        redirect_to dashboard_path(@user)
-      else
-        render :action => 'new'
-      end
+    if @user_session.save
+      flash[:notice] = "Successfully logged in."
+      redirect_to dashboard_path(@user)
+    else
+      render :action => 'new'
     end
   end
 
