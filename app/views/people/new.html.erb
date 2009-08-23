@@ -9,6 +9,11 @@
     <%= f.text_field :name %>
   </p>
 
+  <p>
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </p>
+
   <h2>Data Points</h2>
   <div id="dvdatacontainer">
     <% f.fields_for :data_points do |data_point_form| %>
