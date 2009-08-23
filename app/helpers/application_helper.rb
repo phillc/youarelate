@@ -22,4 +22,13 @@ module ApplicationHelper
       render(:partial => options[:partial], :locals => { options[:form_builder_local] => f })
     end
   end
+
+
+  def help_round(number, by)
+    if number == 0
+      0
+    else
+      number.round(by)
+    end
+  end
 end
