@@ -17,9 +17,15 @@
   <div class="person_stat">
     <div id="graph_box_<%= person.id %>" style="width:266px; height:100px; margin: 12px auto 0; background-color: white; border: 1px solid #938A82;">
     </div>
-    <p><%= person.notes %></p>
-    <p>Average Tardiness: <%= help_round(person.avg, 1) %></p>
-    <p>Tardiness Standard Deviation: <%= help_round(person.stddev, 2) %></p>
+    <p style="font-size: 12px">
+      Average Tardiness: <%= help_round(person.avg, 1) %> minutes <br />
+      Tardiness Standard Deviation: <%= help_round(person.stddev, 2) %> minutes
+    </p>
+    <p style="font-size: 12px">
+      -- Notes --<br />
+      <%= person.notes %>
+    </p>
+
   </div>
   <%= hidden_field :people, "", {:id => "", :value => person.id} %>
   <div class="confirm_delete" style="display:none;">
