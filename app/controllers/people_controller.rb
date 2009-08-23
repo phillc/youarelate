@@ -30,7 +30,7 @@ class PeopleController < ApplicationController
     @person = @user.people.new(params[:person])
     if @person.save
       flash[:notice] = "#{@person.name} was successfully added."
-      redirect_to(edit_person_path(@user, @person))
+      redirect_to(dashboard_path(current_user))
     else
       render :action => "new"
     end
