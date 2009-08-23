@@ -80,12 +80,13 @@ function show_login_register(login_register) {
 
 //for the delay chart drawing
 function draw_graph(id) {
+  console.log(points[id])
   if($('graph_box_' + id).empty()){
     Flotr.draw(
       $('graph_box_' + id),
       [
         { // => first series
-          data: [ [0, 0], [1, 2], [2, 4], [3, 6], [4, 8] ],
+          data: points[id],
           label: "y = 2x",
           lines: {show: true, fill: true},
           points: {show: true}

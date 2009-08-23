@@ -19,5 +19,8 @@ class Person < ActiveRecord::Base
 
   validates_presence_of :name
 
+  def chart_points
+    data_points.collect {|dp| "[" + [dp.time_difference, rand(7)].join(", ") + "]"}.join(", ")
+  end
 
 end
