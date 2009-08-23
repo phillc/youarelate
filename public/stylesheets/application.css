@@ -25,28 +25,42 @@ img { border: none; }
 a { border-bottom: 1px solid #2C1C0F; color: #2C1C0F; text-decoration: none; }
 a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
 
-.dvtopbarcontainer { background-color: #F8F4D5; border-bottom: 5px solid #F8F4D5; width: 100%; }
-.dvtopbarcontainer form { margin: 0 auto; width: 900px; text-align: right; }
-.dvtopbarcontainer label { color: #938A82; }
-.dvtopbarcontainer a { border-bottom: 1px solid #938A82; color: #938A82; }
+/**
+ * Hidden login and register bar
+ */
+.dvtopbarcontainer {
+  color: #938A82;
+  background-color: #F8F4D5;
+  border-bottom: 5px solid #F8F4D5;
+  width: 100%;
+  }
+.dvtopbarcontainer form { margin: 0 auto; text-align: right; width: 900px; }
+.dvtopbarcontainer a       { border-bottom: 1px solid #938A82; color: #938A82; }
 .dvtopbarcontainer a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
 .dvtopbarcontainer input {
-  border: 1px inset #D5D4CD;
   background-color: #938A82;
+  border: 1px inset #D5D4CD;
   color: #F8F4D5;
   font-size: 14px;
   padding: 3px 6px;
   }
 
+/**
+ * Main wrappers
+ */
 #dvmaincontainer { margin: 0 auto; width: 900px; }
-#dvmaincontainer #dvtopcontainer { width: 100%; }
+
+/**
+ * Header
+ */
+#dvtopcontainer { width: 900px; }
 
 /**
  * Header - Logo
  */
 #dvtopcontainer #dvlogocontainer {
   float: left;
-  padding: 5px 71px 0 0;
+  padding: 5px 0 0 0;
   }
 #dvlogocontainer h1 {
   color: #BB9F89;
@@ -55,18 +69,17 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
   text-align: center;
   text-transform: uppercase;
   }
-#dvlogocontainer h1 span { display: block; }
+#dvlogocontainer h1 span      { display: block; }
+#dvlogocontainer h1 span a    { border: 0 none black; color: #BB9F89; }
 #dvlogocontainer h1 span.lvl1 { font-size: 16px; }
 #dvlogocontainer h1 span.lvl2 { font-size: 18px; line-height: 10px; }
 #dvlogocontainer h1 span.lvl3 { font-size: 33px; line-height: 33px; }
-#dvlogocontainer h1 span a { border: 0 none #000000; color: #BB9F89; }
 #dvlogocontainer h1 span.lvl3 a { color: #F8F4D5; }
 
 /**
- * Header - Right Navigation
+ * Header - Top Right Navigation
  */
 #dvtopcontainer #dvnavicontainer { float: right; }
-#dvnavicontainer img { float: left; } 
 #dvnavicontainer #tabs {
   background-image: url(../images/navi_left.jpg);
   background-position: bottom left;
@@ -80,22 +93,22 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
   /* height: 100%; Fix for MSIE peekaboo bug */
   }
 #dvnavicontainer #tabs ul {
+  background-color: #F8F4D5;
   background-image: url(../images/navi_right.jpg);
   background-position: bottom right;
   background-repeat: no-repeat;
   float: left;
   list-style: none;
-  padding-right: 11px;
+  padding: 5px 11px 0 0;
   }
 #dvnavicontainer #tabs li {
-  background: #F8F4D5;
   display: inline;
   float: left; 
   height: 25px;
   voice-family: "\"}\"";
   }
 #dvnavicontainer #tabs a {
-  border: 0 none #000000;
+  border: 0 none black;
   color: #938A82;
   padding: 3px 9px 0 9px; 
   }
@@ -105,14 +118,38 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
 }
 
 /**
- * Main Body
+ * Main Body Container
  */
 #dvbodycontainer {
+  background-color: white;
   clear: both;
   color: #513D2C;
   font-size: 14px;
   line-height: 21px;
+  width: 900px;
   }
+
+/**
+ * Main Body - Top Flash Bar
+ */
+#dvbodycontainer #dvbannerbgcontainer {
+  background-image: url(../images/bg.jpg);
+  background-position: top;
+  background-repeat: repeat;
+  border-bottom: 1px solid #D5D4CD;
+  border-top: 1px solid #D5D4CD;
+  padding: 15px 25px;
+  width: 850px;
+  }
+#dvbannerbgcontainer h1 { color: #513D2C; margin: 0; }
+
+/**
+ * Main Body - Main panel content
+ */
+#dvbodycontainer #dvmainpanel {
+  padding: 0 25px 12px 25px;
+  overflow: auto;
+}
 #dvbodycontainer h1 {
   color: #2C1C0F;
   font-size: 24px;
@@ -129,69 +166,58 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
   font-size: 15px;
   padding-right: 15px;
   }
-#dvbodycontainer .block {
-  padding: 14px;
-  }
-
-#dvbodycontainer span.buttons {
-  display: block;
-  padding: 14px 0; 
-  } 
-
-#dvmaincontainer #dvbodycontainer { background-color: #FFFFFF; width: 900px; }
-#dvbodycontainer #dvbannerbgcontainer {
-  background-image: url(../images/bg.jpg);
-  background-position: top;
-  background-repeat: repeat;
-  border-bottom: 1px solid #D5D4CD;
-  border-top: 1px solid #D5D4CD;
-  padding: 15px 25px;
-  width: 850px;
-  }
-#dvbodycontainer #dvbannerbgcontainer h1 { color: #513D2C; margin: 0; }
-#dvbodycontainer #dvmainpanel {
-  padding: 0 25px 12px 25px;
-  overflow: auto;
-}
+#dvbodycontainer .block { padding: 14px; }
+#dvbodycontainer .buttons { display: block; padding: 14px 0; } 
 
 /**
  * Footer
  */
 #dvfootercontainer {
   color: #938A82;
-  width: 900px;
   background-image: url(../images/footer.jpg);
   background-repeat: no-repeat;
   background-position: top center;
   font-size: 12px;
   padding: 25px 0 0 0;
+  width: 900px;
   }
 #dvfootercontainer a {
-  border-bottom: 0px solid #938A82;
+  border-bottom: 0px solid black;
   color: #938A82;
   margin: 0 5px;
   }
 #dvfootercontainer a:hover { border-bottom: 1px solid #938A82; }
-#dvfootersourcescontianer  {
-  float-right;
-  font-size: 10px;
-  text-align: right;
-  }
-#dvfootersourcescontianer h3 { font-size: 12px; padding: 0 3px 3px; }
-#dvfootersourcescontianer ul { list-style: none; }
 #dvfootercopyrightcontianer  { float: left; padding-right: 15px; }
 #dvfooternavigationcontianer { float: left; }
+#dvfootersourcescontianer    { float: right; font-size: 10px; text-align:right;}
+#dvfootersourcescontianer h3 { font-size: 12px; padding: 0 3px 3px; }
+#dvfootersourcescontianer ul { list-style: none; }
 
-.thirds_column {
+/**
+ * Welcome Page's Three Columns
+ */
+#dvbodycontainer .thirds_column {
   float: left;
   padding: 12px 0;
   width: 283px;
   text-align: center;
   }
-#dvbodycontainer .thirds_column h2 {
-  padding: 0 10px;
+#dvbodycontainer .thirds_column h2 { padding: 0 10px; text-align: left; }
+
+#dvbodycontainer .thirds_column img {
+  border: 1px dashed #D5D4CD;
+  padding: 6px;
+  margin: 10px;
+ }
+#dvbodycontainer .thirds_column p {
+  font-size: 12px;
+  padding: 6px 10px 0 12px;
   text-align: left;
-}
+  }
+
+/**
+ * Standard form defaults (Only used in session though)
+ */
 #dvformcontainer { padding: 12px 0 32px 0; }
 #dvformcontainer input {
   color: #513D2C;
@@ -199,28 +225,23 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
   border: 1px solid #D5D4CD;
   padding: 3px 6px;
   }
-
 #dvformcontainer input:hover,
-#dvformcontainer input:focus {
-  background-color: #F8F4D5;
-  }
+#dvformcontainer input:focus { background-color: #F8F4D5; }
 
-.thirds_column img {
-  border: 1px dashed #D5D4CD;
-  padding: 6px;
-  margin: 10px;
- }
-.thirds_column p {
-  font-size: 12px;
-  padding: 6px 10px 0 12px;
-  text-align: left;
-  }
+/**
+ * Ruby Form Error Messages
+ */ 
+#errorExplanation p { padding: 6px 0 0 0; }
+#errorExplanation ul { padding: 6px 24px 18px; }
 
-#login_openid,
-#openid_identifier,
-#register_openid { width: 300px; }
+/**
+ * Make the OpenID field wide enough. Used in multiple places.
+ */
+#login_openid, #register_openid, #openid_identifier { width: 300px; }
 
-/* Feedback related elements */
+/**
+ * Feedback Button Related Elements
+ */
 #uservoice-dialog-close { border-bottom: 0 solid black; }
 body a#uservoice-feedback-tab {
   background-color: #3F2F22;
@@ -230,11 +251,3 @@ body a#uservoice-feedback-tab:hover {
   background-color: #BB9F89;
   border-color: #BB9F89 #BB9F89 #BB9F89 -moz-use-text-color;
 }
-
-
-
-/**
- * Error Messages
- */ 
-#errorExplanation p { padding: 6px 0 0 0; }
-#errorExplanation ul { padding: 6px 24px 18px; }

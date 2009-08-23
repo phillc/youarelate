@@ -8,7 +8,7 @@
     <%= link_to_function image_tag("icons/minus.png", :alt => "Remove person from calculations"), "move_person($(this).up('li.person'), $('people')); return false;" %>
   </div>
   <%= person.name %>
-  <%= draggable_element("person_" + person.id.to_s, :revert => true) %>
+  <%= draggable_element("person_" + person.id.to_s, :revert => '"failure"') %>
   <% javascript_tag do %>
     $('person_<%= person.id %>').observe('mouseover', function(event){respond_to_hover(event, <%= person.id %>)});
     $('person_<%= person.id %>').observe('active:hover', function(event){respond_to_hover(event, <%= person.id %>)});
