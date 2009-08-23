@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
 
     # these are for help in the dashboard
     def require_equal_user
-      if @user != current_user
+      if @user.id != current_user.id
         render :file => "#{Rails.public_path}/401.html", :layout => true, :status => :unauthorized
       end
     end
