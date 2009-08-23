@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
     def current_user
-      @current_user ||= session[:user] && User.find(session[:user])
+      begin
+        @current_user ||= session[:user] && User.find(session[:user])
+      rescue ActiveRecord::RecordNotFound
+        @current_user = nil
+      end
     end
 
     def current_user=(user)

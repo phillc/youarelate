@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090822203754
+# Schema version: 20090823033627
 #
 # Table name: data_points
 #
@@ -10,10 +10,14 @@
 #  person_id       :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  name            :string(255)
 #
 
 class DataPoint < ActiveRecord::Base
   belongs_to :person
+
+  validates_presence_of :expected_time, :unless => proc {|dp| dp.time_difference}
+  validates_presence_of :actual_time, :unless => proc {|dp| dp.time_difference}
 
   before_save :calculate_difference
 

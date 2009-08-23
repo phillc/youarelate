@@ -1,34 +1,23 @@
 # == Schema Information
-# Schema version: 20090822210831
+# Schema version: 20090823033627
 #
 # Table name: users
 #
-#  id                 :integer         not null, primary key
-#  email              :string(255)
-#  crypted_password   :string(255)
-#  password_salt      :string(255)
-#  persistence_token  :string(255)
-#  created_at         :datetime
-#  updated_at         :datetime
-#  openid_identifier  :string(255)
-#  login              :string(255)
-#  login_count        :integer         default(0), not null
-#  failed_login_count :integer         default(0), not null
-#  last_request_at    :datetime
-#  current_login_at   :datetime
-#  last_login_at      :datetime
-#  current_login_ip   :string(255)
-#  last_login_ip      :string(255)
+#  id           :integer         not null, primary key
+#  identity_url :string(255)
+#  created_at   :datetime
+#  updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
   has_many :people, :dependent => :destroy
 
+  validates_presence_of :identity_url
+
   before_save :populate_starter_data
 
   def populate_starter_data
     #TODO: change this
-    #
     [
       {
         :name => "Drew",
@@ -63,16 +52,20 @@ class User < ActiveRecord::Base
         :notes => "last time he was on time was back when he was still sucking his mother's nip",
       }
     ].each do |peep|
-      n = rand(12)
+      p = Person.new(:name => peep[:name], :notes => peep[:notes])
+      n = rand(12) + 4
       n.times do
         pick = rand(4)
         case pick
           when 0..2
-            self.people.build.data_points.build(:expected_time => DateTime.now - rand(50).days - rand(24).hours - rand(60).minutes)
+            dt = DateTime.now - rand(50).days - rand(24).hours - rand(60).minutes
+            p.data_points.build(:expected_time => dt, :actual_time => dt + (rand(100) -50).minutes)
           when 3
-            self.people.build.data_points.build(:time_difference => rand(100) - 50)
+            p.data_points.build(:time_difference => rand(100) - 50)
         end
       end
+
+      people << p
     end
   end
 end

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090822203754
+# Schema version: 20090823033627
 #
 # Table name: data_points
 #
@@ -10,6 +10,7 @@
 #  person_id       :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  name            :string(255)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
