@@ -28,6 +28,11 @@ function move_person(draggable_element, droppable_element, event) {
   draggable_element.parentNode.removeChild(draggable_element);
   droppable_element.appendChild(draggable_element);
 
+  draggable_element.setStyle({
+    left: '0',
+    top: '0'
+  });
+
   $('calc_form').request();
 }
 
