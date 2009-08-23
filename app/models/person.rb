@@ -41,9 +41,6 @@ class Person < ActiveRecord::Base
     end
   end
 
-
-  end
-
   def avg(options={})
     data_points.average(:time_difference, options)
   end
