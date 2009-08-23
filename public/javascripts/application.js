@@ -45,14 +45,22 @@ function show_login_register(login_register) {
 
   if(login_register == 'login'){
     if(register.getStyle('display') != "none") {
-      Effect.SlideUp(register, {queue: {scope: 'login_register'}});
+      Effect.SlideUp(register, {
+        queue: {scope: 'login_register'},
+        afterFinish: function(){Effect.toggle(login, 'slide', {queue: {scope: 'login_register'}})}
+      });
+    } else {
+      Effect.toggle(login, 'slide', {queue: {scope: 'login_register'}});
     }
-    Effect.toggle(login, 'slide', {queue: {scope: 'login_register'}});
   } else if(login_register == 'register'){
     if(login.getStyle('display') != "none") {
-      Effect.SlideUp(login, {queue: {scope: 'login_register'}});
+      Effect.SlideUp(login, {
+        queue: {scope: 'login_register'},
+        afterFinish: function(){Effect.toggle(register, 'slide', {queue: {scope: 'login_register'}})}
+      });
+    } else {
+      Effect.toggle(register, 'slide', {queue: {scope: 'login_register'}});
     }
-    Effect.toggle(register, 'slide', {queue: {scope: 'login_register'}});
   }
   return false;
 }
