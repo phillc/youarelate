@@ -23,9 +23,7 @@ class DataPoint < ActiveRecord::Base
 
   def calculate_difference
     if time_difference.nil?
-      differential = expected_time - actual_time
-      hours, mins, secs, ignore_fractions = Date::day_fraction_to_time(differential)
-      self.time_difference = hours * 60 + mins * 60 #we dont care about second
+      self.time_difference = ((actual_time - expected_time) / 60).floor
     end
   end
 

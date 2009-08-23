@@ -27,21 +27,24 @@ class Person < ActiveRecord::Base
   #
   # Person.stddev('age')
   def stddev(options = {})
-    data_points.calculate(:stddev, :expected_time, options)
+    data_points.calculate(:stddev, :time_difference, options)
   end
 
   # Calculates the standard popular deviation on a given column. The value returned is a Float.
   #
   # Person.stddev_pop('age')
   def stddev_pop(options = {})
-    data_points.calculate(:stddev_pop, :expected_time, options)
+    data_points.calculate(:stddev_pop, :time_difference, options)
   end
 
   # Calculates the standard sample deviations on a given column. The value return is a Float. 
   #
   # Person.stddev_samp('age')
   def stddev_samp(options = {})
-    data_points.calculate(:stddev_samp, :expected_time, options)
+    data_points.calculate(:stddev_samp, :time_difference, options)
   end 
 
+  def avg(options={})
+    data_points.average(:time_difference, options)
+  end
 end
