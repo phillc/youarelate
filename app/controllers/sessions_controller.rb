@@ -6,9 +6,10 @@ class SessionsController < ApplicationController
     authenticate_with_open_id do |result, identity_url|
       if result.successful?
         self.current_user = User.find_or_create_by_identity_url(identity_url)
+        flash[:notice] = "You have been successfully logged in."
         redirect_to dashboard_path(current_user)
       else
-        flash[:error] = "There was an error signing you in"
+        flash[:error] = result.message
         redirect_to(new_session_url)
       end
     end
