@@ -24,7 +24,7 @@ function move_person(draggable_element, droppable_element, event) {
 
   $('calc_form').request();
 }
-function respond_to_hover(event) {
+function respond_to_hover(event, id) {
   var element = Event.element(event);
   //those links inside are being considered the element
   //for the hover, so go up to what we intended to
@@ -34,6 +34,8 @@ function respond_to_hover(event) {
   //remove the highlight from all people, then add it to the current person
   $$('.active_person').invoke('removeClassName', 'active_person');
   element.addClassName('active_person');
+
+  draw_graph(id);
 }
 
 function show_login_register(login_register) {
@@ -65,3 +67,39 @@ function show_login_register(login_register) {
   return false;
 }
 
+function draw_graph(id) {
+  if($('graph_box_' + id).empty()){
+    Flotr.draw(
+      $('graph_box_' + id),
+      [
+        { // => first series
+          data: [ [0, 0], [1, 2], [2, 4], [3, 6], [4, 8] ],
+          label: "y = 2x",
+          lines: {show: true, fill: true},
+          points: {show: true}
+        },
+        { // => second series
+          data: [ [0, 2.5], [1, 5.5], [2, 8.5], [3, 11.5], [4, 14.5] ],
+          label: "y = 2.5 + 3x"
+        }
+      ],
+      {
+        selection: {
+          mode: 'x', 		// => null, 'x', 'y' or 'xy'
+          color: '#B6D9FF', 	// => color of the selection box
+          fps: 10 		// => frames-per-second to draw the selection box.
+        },
+        mouse: {
+          track: true,		// => true to track mouse
+          position: 'se',		// => position to show the track value box
+          //trackFormatter: defaultTrackFormatter,	// => fn: int -> string
+          margin: 3,		// => margin for the track value box
+          color: '#ff3f19',	// => color for the tracking points, null to hide points
+          trackDecimals: 1,	// => number of decimals for track values
+          radius: 3,		// => radius of the tracking points
+          sensibility: 2		// => the smaller this value, the more precise you've to point with the mouse
+        }
+      }
+    );
+  }
+}

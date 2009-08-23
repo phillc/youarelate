@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  helper_method :current_user
+  helper_method :current_user, :current_home
 
+  private
     def current_user
       begin
         @current_user ||= session[:user] && User.find(session[:user])
@@ -46,5 +47,13 @@ class ApplicationController < ActionController::Base
       ##because the dashboard is the only place the dashboard_id is actually
       ##just id, but i still need it as a before_filter
       @user = User.find(params[:id])
+    end
+
+    def current_home
+      if current_user
+        dashboard_path(current_user)
+      else
+        root_path
+      end
     end
 end

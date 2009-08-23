@@ -2,7 +2,9 @@
 
 <% javascript_tag do %>
   Event.observe(window, 'load',
-    function() { $('people').down('.person').addClassName('active_person') }
+    function() {
+      $('people').down('.person').fire("active:hover")
+    }
   );
 <% end %>
 
