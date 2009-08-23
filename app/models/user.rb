@@ -56,9 +56,6 @@ class User < ActiveRecord::Base
       n = rand(15) + 10
       personality = rand(15) - 5
       n.times do
-        pick = rand(4)
-
-
         r = rand(16 + 24)
         if r > 16
           #for weight
@@ -70,13 +67,7 @@ class User < ActiveRecord::Base
         end
         r = r - 3
         diff = personality + r
-        case pick
-          when 0..2
-            dt = DateTime.now - rand(50).days - rand(24).hours - rand(60).minutes
-            p.data_points.build(:expected_time => dt, :actual_time => dt + diff.minutes)
-          when 3
-            p.data_points.build(:time_difference => diff)
-        end
+        p.data_points.build(:time_difference => diff)
       end
 
       people << p
