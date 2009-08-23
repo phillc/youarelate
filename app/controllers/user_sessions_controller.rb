@@ -25,7 +25,17 @@ class UserSessionsController < ApplicationController
         end
       end
     end
-    #render :action => "new"
+
+    #lol hacks!!
+    ## this is for user session, if you feed it an open id provider
+    #that 404s, then it does some crazy break out of block thing
+    #(i know because i read the source code), and somehow, we end up
+    #at this part of the create method without ever rendering
+    #something... and so uh, if we havent rendered or redirected... lets
+    #assume that something messed up and hit them back to the form
+    if !@performed_render and !@performed_redirect
+      render :action => "new"
+    end
   end
 
   def destroy
