@@ -13,7 +13,7 @@
 
 class Person < ActiveRecord::Base
   belongs_to :user
-  has_many :data_points, :dependent => :destroy, :order => :time_difference
+  has_many :data_points, :dependent => :destroy
 
   accepts_nested_attributes_for :data_points, :reject_if => lambda { |a| a.values.all?(&:blank?) }, :allow_destroy => true
 
@@ -21,9 +21,10 @@ class Person < ActiveRecord::Base
 
   def chart_points
     #grab all the time diffentials, group them in groups of size
+
     group_size = 2
     
-    dps = data_points.collect {|dp| (((dp.time_difference) / group_size).floor)*group_size}
+    dps = data_points.find(:all, :order => "time_difference").collect {|dp| (((dp.time_difference) / group_size).floor)*group_size}
     #the unique ones
     udps = dps.uniq
     #find their counts
