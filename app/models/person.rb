@@ -18,4 +18,6 @@ class Person < ActiveRecord::Base
   accepts_nested_attributes_for :data_points, :reject_if => lambda { |a| a.values.all?(&:blank?) }, :allow_destroy => true
 
   validates_presence_of :name
+
+
 end

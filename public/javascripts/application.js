@@ -2,6 +2,11 @@
 // This file is automatically included by javascript_include_tag :defaults
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
+
+//for the charts
+var points = [];
+
+//for the javascript add
 function insert_fields(link, method, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + method, "g")
@@ -18,12 +23,16 @@ function remove_fields(link) {
   $(link).up(".fields").hide();
 }
 
+//to manually move from list to jar
 function move_person(draggable_element, droppable_element, event) {
   draggable_element.parentNode.removeChild(draggable_element);
   droppable_element.appendChild(draggable_element);
 
   $('calc_form').request();
 }
+
+//to set the person as active for styling
+//and for chart drawing delay
 function respond_to_hover(event, id) {
   var element = Event.element(event);
   //those links inside are being considered the element
@@ -38,6 +47,8 @@ function respond_to_hover(event, id) {
   draw_graph(id);
 }
 
+//so that the button says login or register depending
+//and the animations are queued so they dont go choppy
 function show_login_register(login_register) {
   var login = $('dvlogincontainer');
   var register = $('dvregistercontainer');
@@ -67,6 +78,7 @@ function show_login_register(login_register) {
   return false;
 }
 
+//for the delay chart drawing
 function draw_graph(id) {
   if($('graph_box_' + id).empty()){
     Flotr.draw(
