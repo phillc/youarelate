@@ -35,7 +35,7 @@ class Person < ActiveRecord::Base
   def stddev(options = {})
     if data_points.count > 0:
       s = std_dev(data_points.collect(&:time_difference))
-      if s.nan? || nil
+      if s.nan?
         0
       else
         s
