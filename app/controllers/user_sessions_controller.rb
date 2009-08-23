@@ -4,7 +4,6 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    puts params.inspect
     @user_session = UserSession.new(params[:user_session])
     @user_session.save do |result|
       if result
@@ -26,7 +25,7 @@ class UserSessionsController < ApplicationController
         end
       end
     end
-
+    #render :action => "new"
   end
 
   def destroy
