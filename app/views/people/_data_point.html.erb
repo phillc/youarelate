@@ -1,18 +1,12 @@
-<div class="fields">
-  <p>
-    <%= f.label :name, "Data Point" %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :expected_time %>
-    <%= f.calendar_date_select :expected_time, :time => true  %>
-  </p>
-  <p>
-    <%= f.label :actual_time %>
-    <%= f.calendar_date_select :actual_time, :time => true  %>
-  </p>
+<div class="dvfieldscontainer">
+<dl>
+  <dt><%= f.label :name, "Data Point" %></dt>
+  <dd><%= f.text_field :name %></dd>
+  <dt><%= f.label :expected_time %></dt>
+  <dd><%= f.calendar_date_select :expected_time, :time => true  %></dd>
+  <dt><%= f.label :actual_time %></dt>
+  <dd><%= f.calendar_date_select :actual_time, :time => true  %></dd>
+</dl>
 
-  -<%= remove_child_link "remove", f %>
-  <br /><br />
+<p><%= remove_child_link image_tag("icons/minus.png", :alt => "Remove this data point"), f %></p>
 </div>
-

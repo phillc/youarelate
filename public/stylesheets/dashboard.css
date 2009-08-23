@@ -63,6 +63,10 @@
   padding: 6px 3px 6px 27px;
   margin-bottom: 2px;
 }
+#people_container input:hover,
+#people_container input:focus {
+  background-color: #FAF6DB;
+}
 
 .person {
   list-style-type: none;
@@ -82,7 +86,8 @@
   margin: 12px 0;
 }
 #calculations {
-  min-height: 200px;
+  min-height: 190px;
+  padding-bottom: 11px;
 }
 #calculations_wrapper .target-normal {
   background-color: #DBE1FA;

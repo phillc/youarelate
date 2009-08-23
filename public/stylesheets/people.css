@@ -1,0 +1,27 @@
+#dveditingcontainer dl { overflow: hidden; }
+#dveditingcontainer dd { float: left; padding-top: 12px; }
+#dveditingcontainer dt { clear: left; float: left; padding-top: 12px; width: 150px; }
+#dveditingcontainer dd input { width: 290px;}
+#dveditingcontainer dd textarea { width: 290px;}
+#dvdatacontainer { border: 1px solid #D5D4CD; padding: 12px 12px; margin: 12px 0; }
+#spsavebutton { float: left; }
+#spbackbutton { float: right; }
+#spbackbutton a { border-bottom: 0; color: #513D2C; }
+#dveditingcontainer input,
+#dveditingcontainer textarea,
+#spbackbutton {
+  color: #513D2C;
+  background-color: #FFFFFF;
+  border: 1px solid #D5D4CD;
+  padding: 3px 6px;
+}
+
+#dveditingcontainer input:hover, 
+#dveditingcontainer input:focus, 
+#dveditingcontainer textarea:hover, 
+#dveditingcontainer textarea:focus, 
+#spbackbutton:hover { background-color: #F8F4D5; }
+.dvfieldscontainer { margin: 0 0 12px 0; }
+.dvfieldscontainer dl { clear: both; }
+.dvfieldscontainer p { float: left; padding: 12px 12px 12px 0; }
+#dveditingcontainer p a { border-bottom: 0; }
