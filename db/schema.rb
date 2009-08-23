@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822222645) do
+ActiveRecord::Schema.define(:version => 20090823031559) do
 
   create_table "data_points", :force => true do |t|
     t.datetime "expected_time"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20090822222645) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.string   "username"
   end
 
   add_index "users", ["openid_identifier"], :name => "index_users_on_openid_identifier"
