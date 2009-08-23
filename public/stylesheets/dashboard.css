@@ -117,3 +117,30 @@
   margin: 12px 0 0 0;
   padding: 6px;
 }
+
+#dvaddpersoncontainer { padding: 7px 7px; margin: 6px 3px; border: 1px dotted #D5D4CD; overflow: hidden; }
+#dvaddpersoncontainer h2 { color: #513D2C; font-size: 14px; float: left; padding: 0; margin: 0; }
+#dvaddpersoncontainer a { display: block; float: right; border-bottom: none; }
+#add_friend { clear: both; }
+#dvaddpersoncontainer input { background-image: none; padding: 3px 6px; }
+#dvaddpersoncontainer dl { overflow: hidden; }
+#dvaddpersoncontainer dd { float: none; padding-top: 6px; }
+#dvaddpersoncontainer dt { float: none; padding-top: 6px; }
+#dvaddpersoncontainer dd input, #dvaddpersoncontainer dd textarea { width: 224px;}
+#dvaddpersoncontainer #dvdatacontainer { clear: both; border: 1px solid #D5D4CD; padding: 12px 12px; margin: 12px 0; overflow: hidden; }
+#dvaddpersoncontainer input, #dvaddpersoncontainer textarea {
+  color: #513D2C;
+  background-color: #FFFFFF;
+  border: 1px solid #D5D4CD;
+  padding: 3px 6px;
+  }
+#dvaddpersoncontainer .dvfieldscontainer input { width: 198px;}
+#dvaddpersoncontainer input:hover, #dvaddpersoncontainer input:focus, 
+#dvaddpersoncontainer textarea:hover, #dvaddpersoncontainer textarea:focus {
+  background-color: #F8F4D5;
+  }
+#dvaddpersoncontainer #spsavebutton input { width: 238px; margin-bottom: 0; }
+#dvaddpersoncontainer .dvfieldscontainer { margin: 0 0 12px 0; }
+#dvaddpersoncontainer .dvfieldscontainer dl { clear: both; }
+#dvaddpersoncontainer .dvfieldscontainer p { float: left; padding: 12px 12px 12px 0; }
+#dvaddpersoncontainer p a { border-bottom: 0; }
