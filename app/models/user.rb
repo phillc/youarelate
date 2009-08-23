@@ -30,6 +30,21 @@ class User < ActiveRecord::Base
 
   has_many :people, :dependent => :destroy
 
+  before_save :populate_starter_data
+
+
+  def populate_starter_data
+
+  end
+
+
+
+
+
+
+
+
+
   private
 
     def map_openid_registration(registration)
