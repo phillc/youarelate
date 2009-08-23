@@ -33,11 +33,13 @@ class Person < ActiveRecord::Base
   end
 
   def stddev(options = {})
-    s = std_dev(data_points.collect(&:time_difference))
-    if s.nan?
-      0
-    else
-      s
+    if data_points.count > 0:
+      s = std_dev(data_points.collect(&:time_difference))
+      if s.nan? || nil
+        0
+      else
+        s
+      end
     end
   end
 
