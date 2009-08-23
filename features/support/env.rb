@@ -2,6 +2,11 @@
 ENV["RAILS_ENV"] ||= "cucumber"
 require File.expand_path(File.dirname(__FILE__) + '/../../config/environment')
 require 'cucumber/rails/world'
+ActionController::Base.class_eval do
+  protected
+    def authenticate_with_open_id(identity_url = nil, options = {}, &block) #:doc:
+    end 
+end
 
 # Comment out the next line if you don't want Cucumber Unicode support
 require 'cucumber/formatter/unicode'
@@ -22,9 +27,8 @@ Dir.glob(File.join(File.dirname(__FILE__), '../../features/factories/*.rb')).eac
 
 
 ActionController::Base.class_eval do
-  private
-    def begin_open_id_authentication(identity_url, options = {})
-      yield OpenIdAuthentication::Result.new(:successful), self.normalize_identifier(identity_url), nil
+  protected
+    def authenticate_with_open_id(identity_url = nil, options = {}, &block) #:doc:
     end 
 end
 

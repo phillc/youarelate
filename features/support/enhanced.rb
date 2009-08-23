@@ -13,4 +13,11 @@ Before do
   # truncate your tables here, since you can't use transactional fixtures*
   DatabaseCleaner.strategy = :truncation
   DatabaseCleaner.clean
+ActionController::Base.class_eval do
+  protected
+    def authenticate_with_open_id(identity_url = nil, options = {}, &block) #:doc:
+    end 
 end
+end
+
+
