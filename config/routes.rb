@@ -6,8 +6,8 @@ ActionController::Routing::Routes.draw do |map|
     dashboard.resources :people, :name_prefix => nil
   end
 
-  map.login "login", :controller => "user_sessions", :action => "new"
-  map.logout "logout", :controller => "user_sessions", :action => "destroy"
+  map.login "login", :controller => "sessions", :action => "new"
+  map.logout "logout", :controller => "sessions", :action => "destroy"
 
   map.root :controller => "welcome"
 end

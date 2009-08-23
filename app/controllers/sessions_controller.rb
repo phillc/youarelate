@@ -5,21 +5,18 @@ class SessionsController < ApplicationController
   def create
     authenticate_with_open_id do |result, identity_url|
       if result.successful?
-        if @current_user = User.find_by_identity_url(identity_url)
-          session[:user_id] = @current_user.id
-          redirect_to(root_url)
-        else
-          failed_login "Sorry, no user by that identity URL exists (#{identity_url})"
-        end
+        self.current_user = User.find_or_create_by_identity_url(identity_url)
+        redirect_to dashboard_path(current_user)
       else
-        failed_login result.message
+        flash[:error] = "There was an error signing you in"
+        redirect_to(new_session_url)
       end
     end
   end
 
-  private
-    def failed_login(message)
-      flash[:error] = message
-      redirect_to(new_session_url)
-    end
+  def destroy
+    self.current_user = nil
+    reset_session
+    redirect_to root_path
+  end
 end
