@@ -57,7 +57,19 @@ class User < ActiveRecord::Base
       personality = rand(15) - 5
       n.times do
         pick = rand(4)
-        diff = personality + rand(16) - 8
+
+
+        r = rand(16 + 24)
+        if r > 16
+          #for weight
+          #
+          #distance over 16
+          #divide by four to close range
+          #max of range 6, avg 3, so add it to 3 below middle of regular range (16/2)-3=5
+          r = ((r - 16) / 4) + 5
+        end
+        r = r - 3
+        diff = personality + r
         case pick
           when 0..2
             dt = DateTime.now - rand(50).days - rand(24).hours - rand(60).minutes

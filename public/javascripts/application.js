@@ -89,10 +89,6 @@ function draw_graph(id) {
           label: "y = 2x",
           lines: {show: true, fill: true},
           points: {show: true}
-        },
-        { // => second series
-          data: [ [0, 2.5], [1, 5.5], [2, 8.5], [3, 11.5], [4, 14.5] ],
-          label: "y = 2.5 + 3x"
         }
       ],
       {

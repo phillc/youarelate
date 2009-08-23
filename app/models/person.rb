@@ -20,8 +20,10 @@ class Person < ActiveRecord::Base
   validates_presence_of :name
 
   def chart_points
-    #grab all the time diffentials, group them in twos
-    dps = data_points.collect {|dp| (((dp.time_difference) / 2).floor)*2}
+    #grab all the time diffentials, group them in groups of size
+    group_size = 2
+    
+    dps = data_points.collect {|dp| (((dp.time_difference) / group_size).floor)*group_size}
     #the unique ones
     udps = dps.uniq
     #find their counts
