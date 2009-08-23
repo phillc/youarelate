@@ -1,5 +1,5 @@
 <% form_tag(session_url) do %>
-<%= label :openid_identifier, 
+<%= label_tag :openid_identifier, 
   'Your <a href="http://openid.net/" title="Obtain an OpenID here!">OpenID</a> URL'
 %>
 <%= text_field_tag :openid_identifier, nil, {:id => "#{text.downcase}_openid"} %>
