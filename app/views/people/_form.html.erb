@@ -1,23 +1,21 @@
 <% form_for([@user, @person], :url => person_path(@user, @person)) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </p>
-  <h3>Data Points</h3>
+  <dl>
+    <dt><%= f.label :name %></dt>
+    <dd><%= f.text_field :name %></dd>
+    <dt><%= f.label :notes %></dt>
+    <dd><%= f.text_area :notes %></dd>
+  </dl>
 
-  <% f.fields_for :data_points do |data_point_form| %>
-    <%= render :partial => 'data_point', :locals => { :f => data_point_form } %>
-  <% end %>
-  <p>+<%= add_child_link "New Data Point", f, :data_points %></p>
-  <br />
-  <p>
-    <%= f.submit 'Save' %>
-  </p>
+  <h2>Data Points</h2>
+  <div id="dvdatacontainer">
+    <% f.fields_for :data_points do |data_point_form| %>
+      <%= render :partial => 'data_point', :locals => { :f => data_point_form } %>
+    <% end %>
+    <p><%= add_child_link "Add", f, :data_points %><%= image_tag"icons/plus.png", :alt => "Add a data point" %></p>
+  </div>
+
+  <span id="spsavebutton"><%= f.submit 'Save' %></span>
 
 <% end %>

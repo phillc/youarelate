@@ -1,5 +1,8 @@
 <% title "Editing #{@person.name}" %>
 
-<%= render :partial => 'form' %>
+<h1>Editing <%= @person.name %></h1>
 
-<%= link_to 'Back', dashboard_path(current_user) %>
+<div id="dveditingcontainer">
+<%= render :partial => 'form' %>
+<span id="spbackbutton"><%= link_to 'Back', dashboard_path(current_user) %></span>
+</div>
