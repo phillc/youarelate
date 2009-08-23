@@ -1,11 +1,9 @@
 <% form_tag(session_url) do %>
-<p>
-<label for="openid_identifier">OpenID:</label>
-<%= text_field_tag "openid_identifier" %>
-</p>
-
-<p>
-<%= submit_tag 'Sign in' %>
-</p>
+<%= label :openid_identifier, 
+  '<label>Your <a href="http://openid.net/" ' +
+  'title="Obtain an OpenID here!">OpenID</a> URL</label>'
+%>
+<%= text_field :session, :openid_identifier %>
+<%= submit_tag text %>
 <% end %>
 
