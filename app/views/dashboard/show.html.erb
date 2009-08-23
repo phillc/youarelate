@@ -29,6 +29,7 @@
     <%= render :partial => "people/person", :collection => @user.people %>
   </ul>
   <div id="dvaddpersoncontainer">
+    <h2>Add New Friend</h2>
     <%= link_to_remote image_tag("icons/plus.png", :alt => "Add a friend!"), :update => "add_friend", :url => new_person_path(@user), :method => "get" %>
     <div id="add_friend">
     </div>
