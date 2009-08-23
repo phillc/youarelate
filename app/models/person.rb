@@ -27,7 +27,7 @@ class Person < ActiveRecord::Base
     #find their counts
     freq = udps.collect { |udp| dps.select {|td| td == udp}.length}
     #slap em together as a string
-    "[" + [udps, freq].transpose.collect{|point| "[" + point * ", " + "]"} * ", " + "]"
+    [udps, freq].transpose.collect{|point| "[" + point * ", " + "]"} * ", "
   end
 
   def stddev(options = {})
