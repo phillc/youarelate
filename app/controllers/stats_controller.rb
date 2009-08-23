@@ -10,7 +10,7 @@ class StatsController < ApplicationController
         #magical
         magic_stddev = ((@people.collect{|person| person.stddev}.sum)/(@people.size/2))
         magic_avg = ((@people.collect{|person| person.avg}.sum)/(@people.size))
-        @invite_time = (magic_stddev + magic_avg).round.to_i.to_s + " minutes"
+        @invite_time = (magic_stddev + magic_avg).round.to_i.to_s
 
         #Ben: "Its called, pretend math"
         coeff_var = (magic_stddev) / magic_avg
