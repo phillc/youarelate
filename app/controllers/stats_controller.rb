@@ -6,8 +6,10 @@ class StatsController < ApplicationController
   def index
     @people = @user.people.find(params[:people])
 
-    # TODO: stubbing
-    @invite_time = DateTime.now + rand(60).minutes + rand(24).hours + rand(15).days
-    @invite_probability = rand(40) + 55
+    #magical
+    @invite_time = ((@people.collect{|person| person.stddev}.sum/@people.count/2) + (@people.collect{|person| person.avg}.sum/@people.count)).floor.to_s + " minutes"
+
+    #its called, pretend math
+    @invite_probability = 85
   end
 end

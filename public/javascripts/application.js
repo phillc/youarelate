@@ -86,7 +86,7 @@ function draw_graph(id) {
       [
         { // => first series
           data: points[id],
-          label: "y = 2x",
+          label: "frequency vs time",
           lines: {show: true, fill: true},
           points: {show: true}
         }

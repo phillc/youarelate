@@ -1,2 +1,2 @@
-page.replace_html "invite_time", @invite_time.strftime("on %B %d at, %I:%M%p")
+page.replace_html "invite_time", @invite_time
 page.replace_html "invite_probability", @invite_probability
