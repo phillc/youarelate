@@ -21,35 +21,35 @@ class User < ActiveRecord::Base
     [
       {
         :name => "Drew",
-        :notes => "This mother fucker is always late.",
+        :notes => "This guy is ALWAYS late. Invite with caution",
       },
       {
         :name => "Harry",
-        :notes => "Heh, I bet his variance is a little crazy",
+        :notes => "Fun... most of the time. Invite sparingly",
       },
       {
         :name => "John",
-        :notes => "Rofl, what can I say about this strange man?",
+        :notes => "Likes to hit on random girls, sexual harassment lawsuit pending.",
       },
       {
         :name => "Mark",
-        :notes => "Well, I once saw him going 100 mph... how can he ever be late like that?",
+        :notes => "Drives a Ferrarri, average speed of 100mph. Never late.",
       },
       {
         :name => "Stacey",
-        :notes => "If she wasn't hot, we would have big problems",
+        :notes => "Has an interesting mother, keeps things entertaining. Would invite again, A++++++",
       },
       {
         :name => "Christy",
-        :notes => "She isn't hot. We have big problems.",
+        :notes => "Cool girl, goes by the rapper name XT (Chris-T). Wears a clock around her neck, so she's normally on time.",
       },
       {
         :name => "Matt",
-        :notes => "I guess he could... remote in...",
+        :notes => "Went to vegas and put all his money on red. Tells great stories! Invite often.",
       },
       {
         :name => "Richard",
-        :notes => "last time he was on time was back when he was still sucking his mother's nip",
+        :notes => "Never on time, inviter beware.",
       }
     ].each do |peep|
       p = Person.new(:name => peep[:name], :notes => peep[:notes])
