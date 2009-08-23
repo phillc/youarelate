@@ -15,6 +15,7 @@
     points[<%= person.id %>] = [<%= person.chart_points %>];
   <% end %>
   <div class="person_stat">
+    <h3 style="margin:12px"> <%= person.name %> </h3>
     <div id="graph_box_<%= person.id %>" style="width:266px; height:100px; margin: 12px auto 0; background-color: white; border: 1px solid #938A82;">
     </div>
     <p style="font-size: 12px">
