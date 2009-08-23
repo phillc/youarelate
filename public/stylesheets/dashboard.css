@@ -1,10 +1,11 @@
 .person_stat {
-  width: 200px;
+  float: left;
+  width: 290px;
   background-color: #BB9F89;
   min-height: 300px;
   position: absolute;
   top: 0;
-  left: -200px;
+  left: -290px;
   display: none;
 }
 #people_container .active_person .person_stat {
@@ -18,6 +19,8 @@
   display: none;
 }
 
+.utils a, .calc-utils a { border-bottom: 0px solid #000000; }
+
 #people_container .active_person .utils {
   display: block;
 }
@@ -26,9 +29,20 @@
 }
 
 #people_container {
-  width: 275px;
-  margin-left: 200px;
-  margin-right: 300px;
+  width: 260px;
+  margin: 12px auto;
+}
+
+#people_container input {
+  width: 228px;
+  background-color: #FAF6DB;
+  background-image: url(../images/icons/magnifier.png);
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  border: 1px solid #D5D4CD;
+  color: #513D2C;
+  padding: 6px 3px 6px 27px;
+  margin-bottom: 2px;
 }
 
 .person {
@@ -45,7 +59,8 @@
 
 #calculations_wrapper {
   float: right;
-  width: 275px;;
+  width: 260px;;
+  margin: 12px 0;
 }
 #calculations {
   min-height: 300px;
