@@ -25,7 +25,9 @@ module ApplicationHelper
 
 
   def help_round(number, by)
-    if number == 0
+    if not number
+      0
+    elsif number == 0
       0
     else
       number.round(by)
