@@ -88,7 +88,7 @@
   background-color: #DBE1FA;
 }
 #calculations_wrapper .target-hovering {
-  border-top: 32px solid #CCD5F5;
+  background-color: #CCD5F5;
 }
 #calculations_wrapper {
   background-image: url(../images/calculations_top.png);
