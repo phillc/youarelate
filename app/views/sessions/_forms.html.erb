@@ -2,17 +2,14 @@
 
 <h1> Login using your OpenID URL </h1>
 
-<% form_tag(session_url) do %>
-<p>
-<%= label :openid_identifier, 
-  '<label>Your <a href="http://openid.net/" ' +
-  'title="Obtain an OpenID here!">OpenID</a> URL</label>'
-%>
-<%= text_field_tag "openid_identifier" %>
-</p>
-
-<p>
+<div id="dvformcontainer">
+  <% form_tag(session_url) do %>
+  <%= text_field_tag "openid_identifier" %>
   <%= submit_tag 'Sign in', :disable_with => "Signing in&hellip;" %>
-</p>
+</div>
 <% end %>
 
+<p>
+  Don't have an OpenID? 
+  <a href="http://openid.net/" title="Obtain an OpenID here!">Obtain an OpenID here!</a>
+</p>

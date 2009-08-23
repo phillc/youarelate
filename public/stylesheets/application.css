@@ -190,9 +190,21 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
   text-align: center;
   }
 #dvbodycontainer .thirds_column h2 {
-  padding: 6px 10px;
+  padding: 0 10px;
   text-align: left;
 }
+#dvformcontainer { padding: 12px 0 32px 0; }
+#dvformcontainer input {
+  color: #513D2C;
+  background-color: #FFFFFF;
+  border: 1px solid #D5D4CD;
+  padding: 3px 6px;
+  }
+
+#dvformcontainer input:hover,
+#dvformcontainer input:focus {
+  background-color: #F8F4D5;
+  }
 
 .thirds_column img {
   border: 1px dashed #D5D4CD;
@@ -201,7 +213,21 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
  }
 .thirds_column p {
   font-size: 12px;
-  padding: 12px 10px 0 12px;
+  padding: 6px 10px 0 12px;
   text-align: left;
   }
 
+#login_openid,
+#openid_identifier,
+#register_openid { width: 300px; }
+
+/* Feedback related elements */
+#uservoice-dialog-close { border-bottom: 0 solid black; }
+body a#uservoice-feedback-tab {
+  background-color: #3F2F22;
+  border-color: #3F2F22 #3F2F22 #3F2F22 -moz-use-text-color;
+}
+body a#uservoice-feedback-tab:hover {
+  background-color: #BB9F89;
+  border-color: #BB9F89 #BB9F89 #BB9F89 -moz-use-text-color;
+}
