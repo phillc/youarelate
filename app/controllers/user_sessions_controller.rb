@@ -15,8 +15,12 @@ class UserSessionsController < ApplicationController
         end
       else
         @user = User.new(:openid_identifier => params["openid.claimed_id"])
-        @user.save do |result|
-          if result
+        @user.save do |result2|
+            puts "+_++++++++++++++"
+            puts 'thsi is where we are'
+            puts result2
+            puts @user.errors.inspect
+          if result2
             flash[:notice] = "Registration Successful."
             redirect_to dashboard_path(@user)
           else
@@ -33,9 +37,9 @@ class UserSessionsController < ApplicationController
     #at this part of the create method without ever rendering
     #something... and so uh, if we havent rendered or redirected... lets
     #assume that something messed up and hit them back to the form
-    if !@performed_render and !@performed_redirect
-      render :action => "new"
-    end
+    #if !@performed_render and !@performed_redirect
+      #render :action => "new"
+    #end
   end
 
   def destroy

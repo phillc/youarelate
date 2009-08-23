@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
   has_many :people, :dependent => :destroy
 
-  before_save :populate_starter_data
+  #before_save :populate_starter_data
 
 
   def populate_starter_data
