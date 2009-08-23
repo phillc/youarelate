@@ -28,10 +28,12 @@
   <ul id="people">
     <%= render :partial => "people/person", :collection => @user.people %>
   </ul>
+  <div id="dvaddpersoncontainer">
+    <%= link_to_remote image_tag("icons/plus.png", :alt => "Add a friend!"), :update => "add_friend", :url => new_person_path(@user), :method => "get" %>
+    <div id="add_friend">
+    </div>
+  </div>
   <p class="note">Tip: Drag people's names into the Jar on the left for group statistics.</p>
 </div>
 <%= drop_receiving_element("people", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 
-+<%= link_to_remote "Add Friend", :update => "add_friend", :url => new_person_path(@user), :method => "get" %>
-<div id="add_friend">
-</div>

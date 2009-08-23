@@ -4,15 +4,12 @@
 
 <% form_for @person do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :notes %>
-    <%= f.text_area :notes %>
-  </p>
+  <dl>
+    <dt><%= f.label :name %></dt>
+    <dd><%= f.text_field :name %></dd>
+    <dt><%= f.label :notes %></dt>
+    <dd><%= f.text_area :notes %></dd>
+  </dl>
 
   <h2>Data Points</h2>
   <div id="dvdatacontainer">
@@ -22,5 +19,5 @@
     <p><%= add_child_link image_tag("icons/plus.png", :alt => "Add a data point"), f, :data_points %></p>
   </div>
 
-  <%= f.submit "Add Friend" %>
+  <span id="spsavebutton"><%= f.submit "Add Friend" %></span>
 <% end %>
