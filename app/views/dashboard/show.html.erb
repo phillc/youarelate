@@ -7,6 +7,7 @@
 <% end %>
 
 <div id="calculations_wrapper">
+  <h1>Name Jar</h1>
   <% form_tag dashboard_stats_path(@user, :js), {:method => :get, :id => "calc_form"} do %>
   <ul id="calculations" class="target-normal">
 
@@ -24,6 +25,6 @@
   <ul id="people">
     <%= render :partial => "people/person", :collection => @user.people %>
   </ul>
-  <p class="note">Tip: Drag names into the Jar for group calculations.</p>
+  <p class="note">Tip: Drag people's names into the Jar on the left for group statistics.</p>
 </div>
 <%= drop_receiving_element("people", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>

@@ -13,7 +13,7 @@
     $('person_<%= person.id %>').observe('mouseover', respond_to_hover);
   <% end %>
   <div class="person_stat">
-    <p><%= person.name %></p>
+    <div style="width:266px; height:100px; margin: 12px auto 0; background-color: white; border: 1px solid #938A82;"> </div>
     <p><%= person.notes %></p>
   </div>
   <%= hidden_field :people, "", {:id => "", :value => person.id} %>
