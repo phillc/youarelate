@@ -1,9 +1,8 @@
 <% form_tag(session_url) do %>
 <%= label :openid_identifier, 
-  '<label>Your <a href="http://openid.net/" ' +
-  'title="Obtain an OpenID here!">OpenID</a> URL</label>'
+  'Your <a href="http://openid.net/" title="Obtain an OpenID here!">OpenID</a> URL'
 %>
-<%= text_field_tag :openid_identifier %>
+<%= text_field_tag :openid_identifier, nil, {:id => "#{text.downcase}_openid"} %>
 <%= submit_tag text, :disable_with => "Signing in&hellip;" %>
 <% end %>
 
