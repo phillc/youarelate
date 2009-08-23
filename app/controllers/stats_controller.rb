@@ -6,11 +6,10 @@ class StatsController < ApplicationController
   def index
     if params[:people]
       @people = @user.people.find(params[:people])
-
-      #begin
+      begin
         #magical
-        magic_stddev = (@people.collect{|person| person.stddev}.sum/@people.count/2) 
-        magic_avg = (@people.collect{|person| person.avg}.sum/@people.count)
+        magic_stddev = (@people.collect{|person| person.stddev}.sum/@people.size/2)
+        magic_avg = (@people.collect{|person| person.avg}.sum/@people.size)
         @invite_time = (magic_stddev + magic_avg).round.to_i.to_s + " minutes"
 
         #Ben: "Its called, pretend math"
@@ -23,11 +22,11 @@ class StatsController < ApplicationController
         else
           @invite_probability = magical_number.truncate.to_s
         end
-      #rescue
+      rescue
         #just in case
         @invite_time = 0
         @invite_probability = 0
-      #end
+      end
     else
       @invite_time = 0
       @invite_probability = 0
