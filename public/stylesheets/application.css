@@ -25,12 +25,12 @@ img { border: none; }
 a { border-bottom: 1px solid #2C1C0F; color: #2C1C0F; text-decoration: none; }
 a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
 
-.topbar { background-color: #F8F4D5; border-bottom: 5px solid #F8F4D5; width: 100%; }
-.topbar form { margin: 0 auto; width: 900px; text-align: right; }
-.topbar label { color: #938A82; }
-.topbar a { border-bottom: 1px solid #938A82; color: #938A82; }
-.topbar a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
-.topbar input {
+.dvtopbarcontainer { background-color: #F8F4D5; border-bottom: 5px solid #F8F4D5; width: 100%; }
+.dvtopbarcontainer form { margin: 0 auto; width: 900px; text-align: right; }
+.dvtopbarcontainer label { color: #938A82; }
+.dvtopbarcontainer a { border-bottom: 1px solid #938A82; color: #938A82; }
+.dvtopbarcontainer a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
+.dvtopbarcontainer input {
   border: 1px inset #D5D4CD;
   background-color: #938A82;
   color: #F8F4D5;
@@ -158,30 +158,29 @@ a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
  * Footer
  */
 #dvfootercontainer {
+  color: #938A82;
   width: 900px;
   background-image: url(../images/footer.jpg);
   background-repeat: no-repeat;
   background-position: top center;
-  margin: 0;
-  padding: 0 0 50px 0;
-  }
-#dvfootercontainer p {
-  color: #938A82;
   font-size: 12px;
-  padding: 25px 20px 0 20px;
+  padding: 25px 0 0 0;
   }
-#dvfootercontainer p a {
+#dvfootercontainer a {
   border-bottom: 0px solid #938A82;
   color: #938A82;
-  padding-left: 5px;
-  padding-right: 5px;
+  margin: 0 5px;
   }
-#dvfootercontainer p a:hover {
-  border-bottom: 0px solid #938A82;
-  color: #938A82;
+#dvfootercontainer a:hover { border-bottom: 1px solid #938A82; }
+#dvfootersourcescontianer  {
+  float-right;
+  font-size: 10px;
+  text-align: right;
   }
-#dvfootercontainer p span { padding: 0 15px 0 0; }
-#dvfootercontainer span.designers { float: right; }
+#dvfootersourcescontianer h3 { font-size: 12px; padding: 0 3px 3px; }
+#dvfootersourcescontianer ul { list-style: none; }
+#dvfootercopyrightcontianer  { float: left; padding-right: 15px; }
+#dvfooternavigationcontianer { float: left; }
 
 .thirds_column {
   float: left;
@@ -231,3 +230,11 @@ body a#uservoice-feedback-tab:hover {
   background-color: #BB9F89;
   border-color: #BB9F89 #BB9F89 #BB9F89 -moz-use-text-color;
 }
+
+
+
+/**
+ * Error Messages
+ */ 
+#errorExplanation p { padding: 6px 0 0 0; }
+#errorExplanation ul { padding: 6px 24px 18px; }
