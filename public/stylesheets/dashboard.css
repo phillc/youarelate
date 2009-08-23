@@ -86,7 +86,8 @@
   margin: 12px 0;
 }
 #calculations {
-  min-height: 200px;
+  min-height: 190px;
+  padding-bottom: 11px;
 }
 #calculations_wrapper .target-normal {
   background-color: #DBE1FA;
