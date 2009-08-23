@@ -19,6 +19,7 @@
 <%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 
 <div id="people_container">
+  <h2> Drag names to the right to add </h2>
   <%= label :person, :name, "Search" %>
   <%= text_field :person, :name %>
   <%= observe_field :person_name, :url => people_path(@user, :js), :with => "'search=' + $('person_name').value + '&' + $('calc_form').serialize()", :frequency => 1, :method => :get %>

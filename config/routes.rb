@@ -40,6 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   
   map.resources :user_sessions
+
   map.resources :dashboard, :only => :show do |dashboard|
     dashboard.resources :stats, :only => :index
     dashboard.resources :people, :name_prefix => nil
