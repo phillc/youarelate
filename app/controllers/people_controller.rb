@@ -19,6 +19,7 @@ class PeopleController < ApplicationController
 
   def new
     @person = @user.people.new
+    render :layout => false if request.xhr?
   end
 
   def edit
@@ -28,8 +29,8 @@ class PeopleController < ApplicationController
   def create
     @person = @user.people.new(params[:person])
     if @person.save
-      flash[:notice] = 'Person was successfully created.'
-      redirect_to(@person)
+      flash[:notice] = "#{@person.name} was successfully added."
+      redirect_to(edit_person_path(@user, @person))
     else
       render :action => "new"
     end
@@ -55,11 +56,11 @@ class PeopleController < ApplicationController
   end
 
   private
-    def get_user
-      @user = User.find(params[:dashboard_id])
+  def get_user
+    @user = User.find(params[:dashboard_id])
 
-      if @user != current_user
-        redirect_to dashboard_path(current_user)
-      end
+    if @user != current_user
+      redirect_to dashboard_path(current_user)
     end
+  end
 end

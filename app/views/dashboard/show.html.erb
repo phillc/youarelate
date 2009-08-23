@@ -2,18 +2,18 @@
 
 <% javascript_tag do %>
   Event.observe(window, 'load',
-    function() {
-      $('people').down('.person').fire("active:hover")
-    }
+  function() {
+  $('people').down('.person').fire("active:hover")
+  }
   );
 <% end %>
 
 <div id="calculations_wrapper">
   <h1>Event Jar</h1>
   <% form_tag dashboard_stats_path(@user, :js), {:method => :get, :id => "calc_form"} do %>
-  <ul id="calculations" class="target-normal">
+    <ul id="calculations" class="target-normal">
 
-  </ul>
+    </ul>
   <% end %>
   <p>You should invite people <span id="invite_time"> at 12:00</span></p>
   <p>Then you would have a <span id="invite_probability">0</span>% chance of getting them all there on time</p>
@@ -22,6 +22,7 @@
 <%= drop_receiving_element("calculations", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
 
 <div id="people_container">
+
   <%= text_field :person, :name %>
   <%= observe_field :person_name, :url => people_path(@user, :js), :with => "'search=' + $('person_name').value + '&' + $('calc_form').serialize()", :frequency => 1, :method => :get %>
   <ul id="people">
@@ -30,3 +31,7 @@
   <p class="note">Tip: Drag people's names into the Jar on the left for group statistics.</p>
 </div>
 <%= drop_receiving_element("people", {:onDrop => "move_person", :hoverclass => "target-hovering"}) %>
+
++<%= link_to_remote "Add Friend", :update => "add_friend", :url => new_person_path(@user), :method => "get" %>
+<div id="add_friend">
+</div>
