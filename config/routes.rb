@@ -10,5 +10,4 @@ ActionController::Routing::Routes.draw do |map|
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
   map.root :controller => "welcome"
-
 end
