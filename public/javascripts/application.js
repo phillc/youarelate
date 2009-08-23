@@ -38,7 +38,7 @@ function respond_to_hover(event) {
 
 function show_login_register(login_register) {
   var login = $('dvlogincontainer');
-  var register = $('dvregsitercontainer');
+  var register = $('dvregistercontainer');
 
   var queue = Effect.Queues.get('login_register');
   queue.each(function(effect) { effect.cancel(); });

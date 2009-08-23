@@ -1,5 +1,8 @@
 <% form_for :user_session, {:url => user_sessions_path, :method => :post} do |f| %>
-  <%= f.label :openid_identifier, '<label>Your <a href="http://openid.net/" title="Obtain an OpenID here!">OpenID</a> URL</label>' %>
+  <%= f.label :openid_identifier, 
+    '<label>Your <a href="http://openid.net/" ' +
+     'title="Obtain an OpenID here!">OpenID</a> URL</label>'
+  %>
   <%= f.text_field :openid_identifier %>
   <%= f.submit text %>
 <% end %>

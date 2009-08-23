@@ -25,11 +25,18 @@ img { border: none; }
 a { border-bottom: 1px solid #2C1C0F; color: #2C1C0F; text-decoration: none; }
 a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
 
-#dvlogincontainer { background-color: #F8F4D5; border-bottom: 5px solid #F8F4D5; width: 100%; }
-#dvlogincontainer form { margin: 0 auto; width: 900px; text-align: right; }
-#dvlogincontainer label { color: #938A82; }
-#dvlogincontainer a { border-bottom: 1px solid #938A82; color: #938A82; }
-#dvlogincontainer a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
+.topbar { background-color: #F8F4D5; border-bottom: 5px solid #F8F4D5; width: 100%; }
+.topbar form { margin: 0 auto; width: 900px; text-align: right; }
+.topbar label { color: #938A82; }
+.topbar a { border-bottom: 1px solid #938A82; color: #938A82; }
+.topbar a:hover { border-bottom: 1px solid #513D2C; color: #513D2C; }
+.topbar input {
+  border: 1px inset #D5D4CD;
+  background-color: #938A82;
+  color: #F8F4D5;
+  font-size: 14px;
+  padding: 3px 6px;
+  }
 
 #dvmaincontainer { margin: 0 auto; width: 900px; }
 #dvmaincontainer #dvtopcontainer { width: 100%; }
