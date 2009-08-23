@@ -22,9 +22,11 @@
 #
 
 class User < ActiveRecord::Base
-  authenticate_with_open_id do |result, identity_url|
+  #authenticate_with_open_id do |result, identity_url|
 
-  end
+  #end
+  # OpenIdAuthentication.normalize_url(user.identity_url)
+
 
   has_many :people, :dependent => :destroy
 
