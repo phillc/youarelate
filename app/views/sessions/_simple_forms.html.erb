@@ -3,7 +3,7 @@
   '<label>Your <a href="http://openid.net/" ' +
   'title="Obtain an OpenID here!">OpenID</a> URL</label>'
 %>
-<%= text_field :session, :openid_identifier %>
-<%= submit_tag text %>
+<%= text_field_tag :openid_identifier %>
+<%= submit_tag text, :disable_with => "Signing in&hellip;" %>
 <% end %>
 
