@@ -25,7 +25,7 @@ class UserSessionsController < ApplicationController
         end
       end
     end
-    render :action => "new"
+    #render :action => "new"
   end
 
   def destroy
