@@ -5,12 +5,14 @@
   </p>
   <p>
     <%= f.label :expected_time %>
-    <%= f.datetime_select :expected_time %>
+    <%= f.calendar_date_select :expected_time, :time => true  %>
   </p>
   <p>
     <%= f.label :actual_time %>
-    <%= f.datetime_select :actual_time %>
+    <%= f.calendar_date_select :actual_time, :time => true  %>
   </p>
 
-  <%= remove_child_link "remove", f %>
+  -<%= remove_child_link "remove", f %>
+  <br /><br />
 </div>
+
