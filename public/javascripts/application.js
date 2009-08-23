@@ -20,7 +20,7 @@ function remove_fields(link) {
   if (hidden_field) {
     hidden_field.value = '1';
   }
-  $(link).up(".fields").hide();
+  $(link).up(".dvfieldscontainer").hide();
 }
 
 //to manually move from list to jar

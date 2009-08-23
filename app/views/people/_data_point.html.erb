@@ -1,11 +1,9 @@
 <div class="dvfieldscontainer">
 <dl>
-  <dt><%= f.label :name, "Data Point" %></dt>
+  <dt><%= f.label :name, "Event Name" %></dt>
   <dd><%= f.text_field :name %></dd>
-  <dt><%= f.label :expected_time %></dt>
-  <dd><%= f.calendar_date_select :expected_time, :time => true  %></dd>
-  <dt><%= f.label :actual_time %></dt>
-  <dd><%= f.calendar_date_select :actual_time, :time => true  %></dd>
+  <dt><%= f.label :time_difference, "How late in minutes? (negative for early)" %></dd>
+  <dd><%= f.text_field :time_difference %></dd>
 </dl>
 
 <p><%= remove_child_link image_tag("icons/minus.png", :alt => "Remove this data point"), f %></p>

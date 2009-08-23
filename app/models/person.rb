@@ -33,8 +33,12 @@ class Person < ActiveRecord::Base
   end
 
   def stddev(options = {})
-    std_dev(data_points.collect(&:time_difference))
-
+    s = std_dev(data_points.collect(&:time_difference))
+    if s.nan?
+      0
+    else
+      s
+    end
   end
 
   def avg(options={})
