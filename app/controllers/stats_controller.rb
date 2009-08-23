@@ -8,8 +8,8 @@ class StatsController < ApplicationController
       @people = @user.people.find(params[:people])
       begin
         #magical
-        magic_stddev = (@people.collect{|person| person.stddev}.sum/@people.size/2)
-        magic_avg = (@people.collect{|person| person.avg}.sum/@people.size)
+        magic_stddev = ((@people.collect{|person| person.stddev}.sum)/(@people.size/2))
+        magic_avg = ((@people.collect{|person| person.avg}.sum)/(@people.size))
         @invite_time = (magic_stddev + magic_avg).round.to_i.to_s + " minutes"
 
         #Ben: "Its called, pretend math"
