@@ -7,3 +7,4 @@ database.yml
 nbproject
 *.db
 *.swp
+*.swo

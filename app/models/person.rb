@@ -33,11 +33,13 @@ class Person < ActiveRecord::Base
   end
 
   def stddev(options = {})
-    begin
-      std_dev(data_points.collect(&:time_difference))
-    rescue
+    s = std_dev(data_points.collect(&:time_difference))
+    if s.nan?
       0
+    else
+      s
     end
+  end
 
 
   end
