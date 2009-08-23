@@ -7,9 +7,18 @@ class StatsController < ApplicationController
     @people = @user.people.find(params[:people])
 
     #magical
-    @invite_time = ((@people.collect{|person| person.stddev}.sum/@people.count/2) + (@people.collect{|person| person.avg}.sum/@people.count)).floor.to_s + " minutes"
+    magic_stddev = (@people.collect{|person| person.stddev}.sum/@people.count/2) 
+    magic_avg = (@people.collect{|person| person.avg}.sum/@people.count)
+    @invite_time = (magic_stddev + magic_avg).floor.to_s + " minutes"
 
-    #its called, pretend math
-    @invite_probability = 85
+    #Ben: "Its called, pretend math"
+    coeff_var = (magic_stddev) / magic_avg
+    magical_number = 100 - (coeff_var*100)/magic_stddev
+    if magical_number < 50
+      @invite_probability = "<50"
+    else
+      @invite_probability = magical_number.truncate.to_s
+    end
+
   end
 end
