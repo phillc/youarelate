@@ -22,16 +22,9 @@
 #
 
 class User < ActiveRecord::Base
-  #authenticate_with_open_id do |result, identity_url|
-
-  #end
-  # OpenIdAuthentication.normalize_url(user.identity_url)
-
-
   has_many :people, :dependent => :destroy
 
-  #before_save :populate_starter_data
-
+  before_save :populate_starter_data
 
   def populate_starter_data
     #TODO: change this
@@ -81,21 +74,5 @@ class User < ActiveRecord::Base
         end
       end
     end
-                               
   end
-
-
-
-
-
-
-
-
-
-  private
-
-    def map_openid_registration(registration)
-      self.email = registration["email"]
-      self.username = registration["nickname"]
-    end
 end
